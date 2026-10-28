@@ -1,0 +1,54 @@
+{
+  "tracks": [
+    {
+      "id": "ai_ml",
+      "name": "AI / Machine Learning",
+      "name_ar": "الذكاء الاصطناعي وتعلم الآلة",
+      "icon": "🤖",
+      "color": "#7c3aed",
+      "required_skills": ["Python", "Linear Algebra", "Statistics", "Machine Learning", "Deep Learning", "Data Visualization", "SQL", "NumPy", "Pandas", "Scikit-learn"],
+      "tools": ["TensorFlow", "PyTorch", "Jupyter", "Docker"],
+      "job_titles": ["ML Engineer", "Data Scientist", "AI Researcher"]
+    },
+    {
+      "id": "data_engineering",
+      "name": "Data Engineering",
+      "name_ar": "هندسة البيانات",
+      "icon": "🗄️",
+      "color": "#0369a1",
+      "required_skills": ["SQL", "Python", "Relational Design", "NoSQL", "ETL", "Data Pipelines", "Linux", "Cloud Basics"],
+      "tools": ["Apache Spark", "Airflow", "Docker", "Kafka"],
+      "job_titles": ["Data Engineer", "ETL Developer", "Pipeline Engineer"]
+    },
+    {
+      "id": "fullstack",
+      "name": "Full-Stack Development",
+      "name_ar": "تطوير الويب الكامل",
+      "icon": "🌐",
+      "color": "#16a34a",
+      "required_skills": ["Algorithms", "Data Structures", "OOP", "APIs", "Databases", "JavaScript", "HTML/CSS", "Version Control"],
+      "tools": ["React", "Node.js", "Docker", "Git"],
+      "job_titles": ["Full-Stack Developer", "Backend Developer", "Software Engineer"]
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "name_ar": "أمن المعلومات",
+      "icon": "🔐",
+      "color": "#dc2626",
+      "required_skills": ["Networking", "Linux", "Cryptography", "Algorithms", "Operating Systems", "Scripting", "Security Protocols"],
+      "tools": ["Wireshark", "Metasploit", "Nmap", "Burp Suite"],
+      "job_titles": ["Security Analyst", "Penetration Tester", "SOC Analyst"]
+    },
+    {
+      "id": "embedded",
+      "name": "Embedded Systems",
+      "name_ar": "الأنظمة المدمجة والـ IoT",
+      "icon": "⚙️",
+      "color": "#ea580c",
+      "required_skills": ["C Programming", "Digital Logic", "Microcontrollers", "Real-Time Systems", "Assembly", "Sensors", "Concurrency"],
+      "tools": ["Arduino", "STM32", "RTOS", "Proteus"],
+      "job_titles": ["Embedded Engineer", "IoT Developer", "Firmware Engineer"]
+    }
+  ]
+}

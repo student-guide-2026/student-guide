@@ -1,0 +1,50 @@
+{
+  "CS101": {
+    "skills": ["Python", "Algorithms", "OOP", "Scripting"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "أساسيات البرمجة والتفكير الخوارزمي"
+  },
+  "CS102": {
+    "skills": ["Algorithms", "Data Structures", "OOP"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "هياكل البيانات والخوارزميات المتقدمة"
+  },
+  "MATH101": {
+    "skills": ["Calculus", "Mathematical Thinking"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "التفاضل والتكامل"
+  },
+  "MATH102": {
+    "skills": ["Linear Algebra", "Statistics", "NumPy"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "الجبر الخطي والإحصاء"
+  },
+  "AI201": {
+    "skills": ["Machine Learning", "Python", "Statistics"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "أساسيات الذكاء الاصطناعي وأنظمة الخبراء"
+  },
+  "AI202": {
+    "skills": ["Machine Learning", "Deep Learning", "Scikit-learn", "NumPy", "Pandas"],
+    "type": "advanced",
+    "is_elective": true,
+    "description_ar": "خوارزميات تعلم الآلة والتطبيقات العملية"
+  },
+  "IS201": {
+    "skills": ["SQL", "Relational Design", "Databases", "ETL"],
+    "type": "core",
+    "is_elective": false,
+    "description_ar": "تصميم قواعد البيانات العلائقية و SQL"
+  },
+  "ROB201": {
+    "skills": ["Microcontrollers", "Real-Time Systems", "Sensors", "Concurrency"],
+    "type": "advanced",
+    "is_elective": true,
+    "description_ar": "أنظمة الروبوتات والمعالجات المدمجة"
+  }
+}

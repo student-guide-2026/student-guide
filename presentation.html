@@ -1,0 +1,3153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎓 دليل الطالب الذكي — Smart Student Guide Online</title>
+    <!-- Google Fonts: Cairo & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Open, Eye-Friendly Modern Academic Palette */
+            --bg-primary: #0a0f1d;
+            --bg-secondary: #111a2e;
+            --bg-card: rgba(23, 33, 56, 0.72);
+            --bg-card-hover: rgba(30, 44, 75, 0.88);
+            --border-color: rgba(99, 102, 241, 0.2);
+            --border-hover: rgba(14, 165, 233, 0.5);
+            --border-card-top: rgba(255, 255, 255, 0.12);
+            --accent-primary: #6366f1;
+            --accent-primary-hover: #4f46e5;
+            --accent-secondary: #38bdf8;
+            --accent-cyan: #0ea5e9;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-purple: #a855f7;
+            --accent-danger: #f43f5e;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --glow: 0 0 25px rgba(99, 102, 241, 0.3);
+            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+            --radius-xl: 22px;
+            --radius-lg: 18px;
+            --radius-md: 14px;
+            --radius-sm: 9px;
+            --font-arabic: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-latin: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-arabic);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.25), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 40%, rgba(14, 165, 233, 0.14), transparent),
+                radial-gradient(ellipse 50% 50% at 0% 70%, rgba(168, 85, 247, 0.12), transparent),
+                radial-gradient(ellipse 70% 60% at 50% 120%, rgba(16, 185, 129, 0.1), transparent);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* Top Online GitHub Banner */
+        .github-banner {
+            background: linear-gradient(90deg, rgba(30, 27, 75, 0.95), rgba(49, 46, 129, 0.85), rgba(15, 23, 42, 0.95));
+            border-bottom: 1px solid var(--border-color);
+            padding: 9px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            backdrop-filter: blur(10px);
+        }
+        .github-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .github-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .github-link {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .github-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 30px 22px;
+        }
+
+        /* Hero Showcase with 3D Core */
+        .hero-showcase {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.65), rgba(15, 23, 42, 0.85));
+            border: 1.5px solid var(--border-color);
+            border-top: 1px solid var(--border-card-top);
+            border-radius: var(--radius-xl);
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(16px);
+        }
+        .hero-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(14, 165, 233, 0.15));
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #a5b4fc;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .hero-title {
+            font-size: 2.35rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 20%, #c7d2fe 60%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+        .hero-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 720px;
+            margin-bottom: 20px;
+        }
+        .hero-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .hero-tag {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-tag i { color: var(--accent-secondary); }
+
+        /* ==========================================
+           3D Illustration 1: Academic AI Core & Cap
+           ========================================== */
+        .scene-3d-wrapper {
+            position: relative;
+            width: 320px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+        .scene-3d-core {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: float3dScene 4s ease-in-out infinite alternate;
+        }
+        @keyframes float3dScene {
+            0% { transform: translateY(-8px) rotateX(16deg) rotateY(-18deg); }
+            100% { transform: translateY(12px) rotateX(24deg) rotateY(-8deg); }
+        }
+        .scene-3d-chip {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #38bdf8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+        .chip-left {
+            top: 25px;
+            right: 0;
+            animation: pulseChip1 3s ease-in-out infinite;
+        }
+        .chip-right {
+            bottom: 25px;
+            left: 0;
+            animation: pulseChip2 3s ease-in-out infinite 1.5s;
+        }
+        @keyframes pulseChip1 {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes pulseChip2 {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+
+        /* ==========================================
+           3D Illustration 2: 3D Career Rocket Showcase
+           ========================================== */
+        .career-3d-banner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 25px;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(15, 23, 42, 0.75));
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.25);
+        }
+        .rocket-3d-wrapper {
+            position: relative;
+            width: 260px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 900px;
+        }
+        .rocket-3d-scene {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rocketHover 3.5s ease-in-out infinite alternate;
+        }
+        @keyframes rocketHover {
+            0% { transform: translateY(6px) rotateZ(-2deg) rotateX(10deg); }
+            100% { transform: translateY(-10px) rotateZ(3deg) rotateX(18deg); }
+        }
+        .thruster-pulse {
+            animation: flameFlicker 0.4s ease-in-out infinite alternate;
+            transform-origin: center top;
+        }
+        @keyframes flameFlicker {
+            0% { opacity: 0.85; transform: scaleY(0.92) scaleX(0.95); }
+            100% { opacity: 1; transform: scaleY(1.1) scaleX(1.05); }
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-card-top);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+        .stat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+        }
+        .stat-content h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .stat-content p {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-family: var(--font-latin);
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            background: rgba(15, 23, 42, 0.7);
+            padding: 8px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+        }
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 11px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            transition: all 0.25s ease;
+        }
+        .tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-primary), #4338ca);
+            color: #fff;
+            border-color: rgba(165, 180, 252, 0.35);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+        }
+
+        /* Cards & Tabs */
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-card-top);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(14px);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 14px;
+        }
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+        }
+
+        /* Buttons & Controls */
+        .btn {
+            background: linear-gradient(135deg, var(--accent-primary), #4338ca);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+            filter: brightness(1.1);
+        }
+        .btn-outline {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-secondary);
+            color: #fff;
+        }
+        .btn-success { background: linear-gradient(135deg, #10b981, #059669); }
+        .btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .btn-primary { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+
+        .input-control {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 11px 16px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+            width: 100%;
+        }
+        .input-control:focus {
+            border-color: var(--accent-secondary);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 11px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .badge-code {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            font-family: var(--font-latin);
+        }
+        .badge-info {
+            background: rgba(14, 165, 233, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(14, 165, 233, 0.35);
+        }
+        .badge-success {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+        }
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+        }
+
+        /* Search Box */
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-box i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .search-box input {
+            padding-right: 50px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            height: 48px;
+        }
+
+        /* Tables */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .custom-table th {
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--text-secondary);
+            font-weight: 700;
+            padding: 14px 18px;
+            text-align: right;
+            border-bottom: 1.5px solid var(--border-color);
+            white-space: nowrap;
+        }
+        .custom-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            vertical-align: middle;
+        }
+        .custom-table tr:hover td {
+            background: rgba(99, 102, 241, 0.06);
+            color: #fff;
+        }
+
+        /* Hour Filter Pills */
+        .catalog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .filter-pill {
+            padding: 8px 18px;
+            border-radius: 25px;
+            background: rgba(30, 41, 59, 0.75);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-pill:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.5);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+        .filter-pill.active {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+        }
+        .course-group-card {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        .course-group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* =============================================================================
+           Developed By Section (Always visible at the bottom / Description)
+           ============================================================================= */
+        .developed-by-section {
+            margin-top: 50px;
+            padding: 40px 30px;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
+            border: 1.5px solid var(--border-color);
+            border-top: 2px solid #38bdf8;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .developed-by-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .developed-by-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .dev-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.35);
+            color: #38bdf8;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        .developed-by-title {
+            font-size: 1.85rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .developed-by-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .dev-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+        .dev-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 26px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-card);
+        }
+        .dev-card:hover {
+            transform: translateY(-6px);
+            border-color: #0a66c2;
+            box-shadow: 0 14px 28px -6px rgba(10, 102, 194, 0.35);
+        }
+        .dev-avatar {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+            border: 3px solid rgba(255, 255, 255, 0.18);
+        }
+        .dev-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        .dev-role {
+            font-size: 0.9rem;
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .dev-id-badge {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(14, 165, 233, 0.12);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 14px;
+            font-size: 0.8rem;
+            color: #bae6fd;
+            margin-bottom: 12px;
+            font-family: monospace;
+        }
+        .dev-desc {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+        .dev-skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .dev-skill-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            color: #cbd5e1;
+        }
+        .dev-linkedin-box {
+            margin-top: auto;
+            width: 100%;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 9px 24px;
+            background: #0a66c2;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(10, 102, 194, 0.4);
+            letter-spacing: 0.2px;
+        }
+        .linkedin-btn i {
+            font-size: 1.25rem;
+        }
+        .linkedin-btn:hover {
+            background: #004182;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 20px rgba(10, 102, 194, 0.6);
+        }
+
+        /* Checklists */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .check-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .check-card:hover {
+            border-color: var(--accent-secondary);
+            background: rgba(56, 189, 248, 0.08);
+        }
+        .check-card input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        .callout {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .callout-val {
+            font-size: 2.2rem;
+            font-weight: 900;
+            font-family: var(--font-latin);
+            color: var(--accent-success);
+        }
+
+        /* Document Viewer */
+        .doc-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .doc-tab {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .doc-tab.active {
+            background: var(--accent-primary);
+            color: #fff;
+            border-color: var(--accent-primary);
+        }
+        .doc-content {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            max-height: 480px;
+            overflow-y: auto;
+        }
+
+        /* CLI Connect Box */
+        .cli-box {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1.5px dashed var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .cli-code {
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: var(--radius-sm);
+            padding: 12px 18px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            direction: ltr;
+            text-align: left;
+            color: #38bdf8;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 0 20px 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-showcase { grid-template-columns: 1fr; text-align: center; padding: 25px 20px; }
+            .hero-subtitle { margin: 0 auto 20px auto; }
+            .hero-highlights { justify-content: center; }
+            .scene-3d-wrapper { margin: 0 auto; }
+            .career-3d-banner { grid-template-columns: 1fr; text-align: center; }
+            .rocket-3d-wrapper { margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 1.7rem; }
+            .nav-tabs { flex-direction: column; }
+            .gpa-row { grid-template-columns: 1fr; }
+            .custom-table { font-size: 0.85rem; }
+            .github-banner { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    
+    </style>
+</head>
+<body>
+
+    <!-- Top GitHub Online Status Banner -->
+    <div class="github-banner">
+        <div class="github-badge">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>مرفوع أونلاين على GitHub Pages (Public & Live)</span>
+        </div>
+        <div class="github-links">
+            <span id="liveUrlText"><i class="fa-solid fa-globe"></i> متاح للجميع أونلاين</span>
+            <a href="https://github.com" target="_blank" class="github-link" id="githubRepoLink">
+                <i class="fa-brands fa-github"></i> مستودع المشروع
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+                <!-- Hero Showcase with 3D Core -->
+        <div class="hero-showcase">
+            <div>
+                <div class="hero-badge-pill">
+                    <i class="fa-solid fa-sparkles"></i> الجيل الذكي لأنظمة الإرشاد الأكاديمي • إصدار 2026
+                </div>
+                <h1 class="hero-title">🎓 دليل الطالب الذكي — Smart Student Guide</h1>
+                <p class="hero-subtitle">
+                    منصة جامعية متكاملة ومصممة بأعلى معايير الذكاء الاصطناعي: محرك استرجاع المعلومات (TF-IDF) للوائح الكلية + محرك الاستنتاج الأكاديمي لشجرة المقررات + مهندس المسار المهني وحاسبة المعدل التراكمي.
+                </p>
+                <div class="hero-highlights">
+                    <span class="hero-tag"><i class="fa-solid fa-magnifying-glass"></i> استرجاع لوائح TF-IDF</span>
+                    <span class="hero-tag"><i class="fa-solid fa-diagram-project"></i> استنتاج المتطلبات DAG</span>
+                    <span class="hero-tag"><i class="fa-solid fa-calculator"></i> حاسبة CGPA دقيقة</span>
+                    <span class="hero-tag"><i class="fa-solid fa-briefcase"></i> مسارات وظيفية ومشاريع</span>
+                </div>
+            </div>
+            
+                <div class="scene-3d-wrapper">
+                    <div class="scene-3d-chip chip-left">
+                        <i class="fa-solid fa-graduation-cap"></i> أكاديمي ذكي
+                    </div>
+                    <div class="scene-3d-chip chip-right">
+                        <i class="fa-solid fa-microchip"></i> TF-IDF Engine
+                    </div>
+                    <div class="scene-3d-core">
+                        <svg viewBox="0 0 320 260" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4338ca"/>
+                                    <stop offset="50%" stop-color="#312e81"/>
+                                    <stop offset="100%" stop-color="#1e1b4b"/>
+                                </linearGradient>
+                                <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#6366f1"/>
+                                    <stop offset="100%" stop-color="#4f46e5"/>
+                                </linearGradient>
+                                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fef08a"/>
+                                    <stop offset="50%" stop-color="#eab308"/>
+                                    <stop offset="100%" stop-color="#ca8a04"/>
+                                </linearGradient>
+                                <linearGradient id="coreNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#38bdf8"/>
+                                    <stop offset="100%" stop-color="#6366f1"/>
+                                </linearGradient>
+                                <linearGradient id="pedestalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1e293b"/>
+                                    <stop offset="100%" stop-color="#0f172a"/>
+                                </linearGradient>
+                                <filter id="glow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="8" result="blur"/>
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                </filter>
+                                <filter id="shadow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/>
+                                </filter>
+                            </defs>
+
+                            <!-- Base Shadow -->
+                            <ellipse cx="160" cy="225" rx="100" ry="24" fill="rgba(0, 0, 0, 0.45)"/>
+                            <ellipse cx="160" cy="225" rx="80" ry="18" fill="rgba(99, 102, 241, 0.25)" filter="url(#glow3d)"/>
+
+                            <!-- Lower Isometric Pedestal -->
+                            <!-- Pedestal Bottom Layer -->
+                            <polygon points="160,200 230,175 160,150 90,175" fill="url(#pedestalGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
+                            <polygon points="90,175 160,200 160,212 90,187" fill="#0f172a" stroke="rgba(56, 189, 248, 0.2)"/>
+                            <polygon points="160,200 230,175 230,187 160,212" fill="#1e293b" stroke="rgba(56, 189, 248, 0.2)"/>
+
+                            <!-- Holographic Orbital Rings -->
+                            <ellipse cx="160" cy="155" rx="110" ry="36" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.8" stroke-dasharray="8 6"/>
+                            <ellipse cx="160" cy="155" rx="85" ry="26" fill="none" stroke="rgba(168, 85, 247, 0.45)" stroke-width="1.5"/>
+                            <!-- Orbiting Data Nodes -->
+                            <circle cx="265" cy="150" r="4.5" fill="#38bdf8" filter="url(#glow3d)"/>
+                            <circle cx="55" cy="160" r="4" fill="#a855f7" filter="url(#glow3d)"/>
+                            <circle cx="160" cy="129" r="3.5" fill="#facc15" filter="url(#glow3d)"/>
+
+                            <!-- Middle Isometric AI Core Cube (Glassmorphic) -->
+                            <g filter="url(#shadow3d)">
+                                <!-- Cube Top Face -->
+                                <polygon points="160,115 200,95 160,75 120,95" fill="rgba(99, 102, 241, 0.45)" stroke="#818cf8" stroke-width="1.5"/>
+                                <!-- Cube Left Face -->
+                                <polygon points="120,95 160,115 160,145 120,125" fill="rgba(30, 27, 75, 0.75)" stroke="#6366f1" stroke-width="1.2"/>
+                                <!-- Cube Right Face -->
+                                <polygon points="160,115 200,95 200,125 160,145" fill="rgba(15, 23, 42, 0.85)" stroke="#4f46e5" stroke-width="1.2"/>
+                                <!-- Circuit Lines on Cube -->
+                                <polyline points="135,108 145,113 145,130" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+                                <polyline points="185,108 175,113 175,130" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="160" cy="95" r="5" fill="#38bdf8" filter="url(#glow3d)"/>
+                            </g>
+
+                            <!-- Upper 3D Levitating Graduation Cap (Mortarboard) -->
+                            <g filter="url(#shadow3d)">
+                                <!-- Skullcap Cylinder under board -->
+                                <ellipse cx="160" cy="72" rx="36" ry="14" fill="#1e1b4b"/>
+                                <path d="M124,72 C124,84 196,84 196,72 L196,82 C196,94 124,94 124,82 Z" fill="#17153a" stroke="rgba(99, 102, 241, 0.4)"/>
+
+                                <!-- Mortarboard Diamond (Cap Top) -->
+                                <!-- 3D Bevel/Thickness -->
+                                <polygon points="160,42 245,62 160,82 75,62" fill="url(#edgeGrad)"/>
+                                <polygon points="75,62 160,82 160,87 75,67" fill="#1e1b4b"/>
+                                <polygon points="160,82 245,62 245,67 160,87" fill="#0f172a"/>
+                                
+                                <!-- Top Surface with Velvet Shading -->
+                                <polygon points="160,38 245,58 160,78 75,58" fill="url(#capGrad)" stroke="rgba(165, 180, 252, 0.5)" stroke-width="1.5"/>
+
+                                <!-- Center Button -->
+                                <ellipse cx="160" cy="58" rx="6" ry="3.5" fill="url(#goldGrad)" stroke="#b45309" stroke-width="1"/>
+
+                                <!-- Golden Tassel -->
+                                <path d="M160,58 Q200,60 215,75 T220,105" fill="none" stroke="url(#goldGrad)" stroke-width="2.2" stroke-linecap="round"/>
+                                <!-- Tassel Fringe Bundle -->
+                                <polygon points="216,105 224,105 226,122 214,122" fill="url(#goldGrad)"/>
+                                <ellipse cx="220" cy="105" rx="4" ry="2" fill="#fef08a"/>
+                            </g>
+
+                            <!-- Levitating Sparkles -->
+                            <polygon points="70,40 73,46 79,48 73,50 70,56 67,50 61,48 67,46" fill="#facc15" opacity="0.9"/>
+                            <polygon points="255,45 257,50 262,51 257,53 255,58 253,53 248,51 253,50" fill="#38bdf8" opacity="0.85"/>
+                        </svg>
+                    </div>
+                </div>
+    
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                <div class="stat-content">
+                    <h4>إجمالي المقررات</h4>
+                    <p id="statCoursesCount">8</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="color: var(--accent-secondary); background: rgba(6, 182, 212, 0.15);"><i class="fa-solid fa-file-shield"></i></div>
+                <div class="stat-content">
+                    <h4>اللوائح والوثائق</h4>
+                    <p id="statDocsCount">4</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="color: var(--accent-warning); background: rgba(245, 158, 11, 0.15);"><i class="fa-solid fa-brain"></i></div>
+                <div class="stat-content">
+                    <h4>المصطلحات المفهرسة</h4>
+                    <p id="statTermsCount">460+</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="color: var(--accent-success); background: rgba(16, 185, 129, 0.15);"><i class="fa-solid fa-satellite-dish"></i></div>
+                <div class="stat-content">
+                    <h4>حالة السيرفر</h4>
+                    <p style="color: var(--accent-success); font-size: 1.1rem; margin-top: 4px;">متصل بالكونسول</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('catalog')">
+                <i class="fa-solid fa-table-list"></i> دليل المقررات
+            </button>
+            <button class="tab-btn" onclick="switchTab('advisor')">
+                <i class="fa-solid fa-diagram-project"></i> فحص المقررات
+            </button>
+            <button class="tab-btn" onclick="switchTab('career')" style="background: rgba(139, 92, 246, 0.18); border: 1px solid rgba(139, 92, 246, 0.45); color: #c4b5fd;">
+                <i class="fa-solid fa-rocket" style="color: #a78bfa;"></i> مهندس المسار المهني (Career)
+            </button>
+            <button class="tab-btn" onclick="switchTab('defense')" style="background: rgba(239, 68, 68, 0.18); border: 1px solid rgba(239, 68, 68, 0.45); color: #fca5a5;">
+                <i class="fa-solid fa-scale-balanced" style="color: #f87171;"></i> محامي الطالب والالتماسات (Defense)
+            </button>
+            <button class="tab-btn" onclick="switchTab('search')">
+                <i class="fa-solid fa-magnifying-glass"></i> البحث باللوائح (TF-IDF)
+            </button>
+            <button class="tab-btn" onclick="switchTab('docs')">
+                <i class="fa-solid fa-file-contract"></i> اللوائح والأنظمة
+            </button>
+            <button class="tab-btn" onclick="switchTab('gpa')">
+                <i class="fa-solid fa-calculator"></i> حاسبة المعدل
+            </button>
+            <button class="tab-btn" onclick="switchTab('admin')">
+                <i class="fa-solid fa-sliders"></i> لوحة الإدارة
+            </button>
+        </div>
+
+        <!-- TAB 1: Catalog -->
+        <div id="tab-catalog" class="tab-pane active">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-graduation-cap"></i> دليل المقررات المعتمدة</div>
+                    <span class="badge badge-code" id="catalogBadge">8 مواد مسجلة</span>
+                </div>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="courseSearchInput" placeholder="ابحث برمز المادة، الاسم، المحاضر أو القاعة..." oninput="filterCourses()">
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>الرمز</th>
+                                <th>اسم المقرر</th>
+                                <th>المحاضر</th>
+                                <th>المكان</th>
+                                <th>الساعات</th>
+                                <th>المتطلبات السابقة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coursesTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Smart Advisor -->
+        <div id="tab-advisor" class="tab-pane">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> محرك الاستنتاج الأكاديمي (Inference Engine)</div>
+                    <button class="btn btn-outline" onclick="resetAdvisor()"><i class="fa-solid fa-rotate-right"></i> إعادة تعيين</button>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                    حدد المواد التي اجتزتها بنجاح لمعرفة المواد المتاحة للتسجيل فوراً والمواد المقفلة مع بيان المتطلبات الناقصة بدقة:
+                </p>
+
+                <div class="checklist-grid" id="advisorChecklist">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <div class="callout" id="advisorSummaryBox">
+                    <div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 5px;">ملخص الخطة الأكاديمية:</h4>
+                        <p style="color: var(--text-secondary);" id="advisorSummaryText">المواد المجتازة: 0 | الساعات المنجزة: 0 ساعة</p>
+                    </div>
+                    <div class="callout-val" id="advisorEligibleCount">0 متاح</div>
+                </div>
+
+                <!-- Available Courses Section -->
+                <div style="margin-top: 30px;">
+                    <h3 style="color: var(--accent-success); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-unlock"></i> المقررات المتاحة لك للتسجيل الآن:
+                    </h3>
+                    <div id="availableCoursesList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;">
+                        <!-- Dynamic -->
+                    </div>
+                </div>
+
+                <!-- Locked Courses Section -->
+                <div style="margin-top: 30px;">
+                    <h3 style="color: var(--accent-warning); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-lock"></i> المقررات المقفلة (ينقصها متطلبات سابقة):
+                    </h3>
+                    <div id="lockedCoursesList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;">
+                        <!-- Dynamic -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: IR Search (TF-IDF & Cosine Similarity) -->
+        
+        <!-- TAB: Career Path Orchestrator -->
+        <div id="tab-career" class="tab-pane">
+            <!-- Hero banner -->
+            <div class="card" style="background: linear-gradient(135deg, rgba(88, 28, 135, 0.4), rgba(15, 23, 42, 0.8)); border-color: rgba(168, 85, 247, 0.4);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h2 style="font-size: 1.45rem; font-weight: 800; color: #f3e8ff; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-rocket" style="color: #c084fc;"></i>
+                            مهندس المسار المهني والأكاديمي (Career-Path Orchestrator)
+                        </h2>
+                        <p style="color: #cbd5e1; font-size: 0.92rem; margin-top: 4px;">
+                            ربط المقررات الجامعية بمتطلبات سوق العمل الحقيقي فوراً: حاسبة الجاهزية، موجه المواد الاختيارية، كاشف الفجوات، ومولد السيرة الذاتية الأكاديمية.
+                        </p>
+                    </div>
+                    <span class="badge" style="background: rgba(168, 85, 247, 0.25); color: #e9d5ff; border: 1px solid rgba(168, 85, 247, 0.5); font-size: 0.85rem; padding: 6px 14px;">
+                        <i class="fa-solid fa-chart-line"></i> Market Tech-Stack Engine
+                    </span>
+                </div>
+            </div>
+
+            <!-- Track Selector and Passed courses sync -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-crosshairs" style="color: var(--accent-secondary);"></i> 1. اختر التراك الوظيفي المستهدف:</div>
+                    <span class="badge badge-code" id="activeTrackBadge">الذكاء الاصطناعي وتعلم الآلة</span>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 10px;" id="trackButtonsContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Feature 1: Market Readiness Calculator & Radar -->
+            <div class="card" id="readinessCard">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-gauge-high" style="color: #38bdf8;"></i> 2. حاسبة الجاهزية لسوق العمل (Market-Readiness Score)</div>
+                    <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" onclick="syncAdvisorToCareer()">
+                        <i class="fa-solid fa-rotate"></i> مزامنة مع المواد المختارة في فاحص المقررات
+                    </button>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: center; margin: 15px 0;">
+                    <!-- Circular / Bar Score -->
+                    <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                        <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">نسبة التغطية الأكاديمية للمسار</span>
+                        <div id="readinessScoreVal" style="font-size: 3.5rem; font-weight: 900; font-family: var(--font-latin); color: #a855f7; margin: 8px 0; text-shadow: 0 0 25px rgba(168, 85, 247, 0.4);">
+                            0%
+                        </div>
+                        <div class="score-bar" style="height: 10px; background: rgba(255, 255, 255, 0.08); border-radius: 5px; overflow: hidden; margin-bottom: 10px;">
+                            <div id="readinessProgressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #8b5cf6, #06b6d4); transition: width 0.5s ease;"></div>
+                        </div>
+                        <p id="readinessInsightText" style="font-size: 0.9rem; color: #94a3b8;">
+                            سجل المواد التي اجتزتها لتحديد نسبة تغطية متطلبات الوظيفة.
+                        </p>
+                    </div>
+
+                    <!-- Skills breakdown -->
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <b style="color: #34d399; font-size: 0.95rem;"><i class="fa-solid fa-check-double"></i> مهارات غطتها كليتك بنجاح:</b>
+                                <span class="badge badge-success" id="coveredSkillsCount">0</span>
+                            </div>
+                            <div id="coveredSkillsList" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;">
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">لم يتم تغطية مهارات بعد.</span>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-md); padding: 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <b style="color: #f87171; font-size: 0.95rem;"><i class="fa-solid fa-triangle-exclamation"></i> الفجوات المهارية المطلوبة في السوق:</b>
+                                <span class="badge badge-danger" id="missingSkillsCount">0</span>
+                            </div>
+                            <div id="missingSkillsList" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;">
+                                <span style="font-size: 0.85rem; color: var(--text-muted);">حدد موادك لاكتشاف الفجوات.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salary & Market roles info -->
+                <div id="trackMarketMeta" style="margin-top: 10px; padding: 12px 16px; background: rgba(30, 41, 59, 0.5); border-radius: var(--radius-md); font-size: 0.88rem; color: #cbd5e1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- Feature 2: Strategic Electives Recommender -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-compass" style="color: #f59e0b;"></i> 3. مُوجِّه المواد الاختيارية الذكي (Strategic Electives Recommender)</div>
+                    <span class="badge badge-warning" id="electivesCountBadge">0 توصيات متاحة</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    بدل ما تسأل على جروبات الدفعة "أسجل مادة إيه اختياري سهلة؟" — النظام يحلل لائحة كليتك والمواد الاختيارية المفتوحة لك الآن والتي تقفل أكبر قدر ممكن من فجوات تراكك الوظيفي المستهدف:
+                </p>
+                <div id="electivesRecommendationList" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Feature 3: Skill Gap & Bridge Roadmap -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-bridge" style="color: #38bdf8;"></i> 4. كاشف الفجوة وخطة الكورسات المجانية الموازية (Bridge Roadmap)</div>
+                    <span class="badge badge-info"><i class="fa-solid fa-graduation-cap"></i> Free Practical Courses</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    الكلية مش هتعلمك كل حاجة؛ النظام بيصارحك بالأدوات (Tools) والتقنيات العملية اللي ناقصاك في التراك ومعاها ترشيحات كورسات سريعة ومجانية 100% تسد بيها الفجوة أثناء الترم:
+                </p>
+                <div id="bridgeRoadmapContainer" style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Feature 4: Academic Coursework CV Generator -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-file-invoice" style="color: #10b981;"></i> 5. منشئ السيرة الذاتية الأكاديمية (Auto-Generated Coursework CV)</div>
+                    <button class="btn btn-success" style="padding: 6px 14px; font-size: 0.85rem;" onclick="printCourseworkCV()">
+                        <i class="fa-solid fa-print"></i> طباعة / حفظ السيرة الذاتية PDF
+                    </button>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    بضغطة زر واحدة: النظام يترجم المواد التي اجتزتها لمشاريع عملية ونقاط إنجاز مكتوبة بلغة احترافية يفهمها مسؤولو التوظيف وأنظمة الـ ATS:
+                </p>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                    <input type="text" id="cvStudentName" class="input-control" style="flex: 1; min-width: 200px;" placeholder="اسم الطالب الثلاثي (مثال: أحمد محمود إبراهيم)" oninput="renderCourseworkCV()">
+                    <input type="text" id="cvStudentEmail" class="input-control" style="flex: 1; min-width: 200px;" placeholder="البريد الإلكتروني الجامعي أو الشخصي" oninput="renderCourseworkCV()">
+                </div>
+
+                <!-- CV Preview Frame -->
+                <div id="cvPreviewBox" style="background: #ffffff; color: #0f172a; padding: 30px; border-radius: var(--radius-md); font-family: 'Outfit', 'Cairo', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid #e2e8f0;">
+                    <!-- CV Content generated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: Academic Defense & Petition Agent -->
+        <div id="tab-defense" class="tab-pane">
+            <!-- Hero banner -->
+            <div class="card" style="background: linear-gradient(135deg, rgba(153, 27, 27, 0.4), rgba(15, 23, 42, 0.8)); border-color: rgba(239, 68, 68, 0.4);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h2 style="font-size: 1.45rem; font-weight: 800; color: #fee2e2; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-scale-balanced" style="color: #f87171;"></i>
+                            محامي الطالب ومُصيغ الالتماسات (The Academic Defense & Petition Agent)
+                        </h2>
+                        <p style="color: #fecaca; font-size: 0.92rem; margin-top: 4px;">
+                            بدل ما النظام يقولك "اللائحة بتقول كذا"، السيستم بياخد صفك ويحلل أزمتك الأكاديمية لاستخراج الاستثناءات والبنود الخفية وصياغة التماس رسمي قانوني فوراً.
+                        </p>
+                    </div>
+                    <span class="badge badge-danger" style="font-size: 0.85rem; padding: 6px 14px;">
+                        <i class="fa-solid fa-gavel"></i> Legal Defense AI
+                    </span>
+                </div>
+            </div>
+
+            <!-- Feature 1: Clause & Exception Matcher -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-user-secret" style="color: #fbbf24;"></i> 1. كاشف المخارج والفرص القانونية في اللائحة (Clause & Exception Matcher)</div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    اشرح مشكلتك بالعامية زي ما حصلت معاك بالضبط (مثلاً: "جالي عذر مرضي ومحضرتش الميدتيرم والدكتور رافض يعيده" أو "عايز أنزل مادة بعد الميعاد عشان هسقط" أو "خريج وناقصلي 24 ساعة"):
+                </p>
+                <div class="search-box" style="margin-bottom: 12px;">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <input type="text" id="defenseProblemInput" placeholder="اكتب مشكلتك هنا باللغة الطبيعية..." onkeydown="if(event.key==='Enter')analyzeDefenseProblem()">
+                    <button class="btn btn-danger" style="margin-right: 10px;" onclick="analyzeDefenseProblem()">
+                        <i class="fa-solid fa-magnifying-glass"></i> تحليل المشكلة وقانونيتها
+                    </button>
+                </div>
+
+                <!-- Quick problem presets -->
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+                    <span style="font-size: 0.82rem; color: var(--text-muted); align-self: center;">أزمات شائعة:</span>
+                    <button class="badge badge-code" style="cursor: pointer;" onclick="quickDefense('عندي تقرير طبي لغياب أسبوعين والدكتور عطاني إنذار حرمان')">
+                        🚑 غياب بعذر طبي وإنذار حرمان
+                    </button>
+                    <button class="badge badge-code" style="cursor: pointer;" onclick="quickDefense('تخلفت عن امتحان الميدتيرم بسبب حادث وعايز امتحان تكميلي')">
+                        📝 إعادة امتحان الميدتيرم بتكميلي
+                    </button>
+                    <button class="badge badge-code" style="cursor: pointer;" onclick="quickDefense('عايز أسقط مادة بعد الأسبوع الثامن بعذر اضطراري بدون رسوب')">
+                        ⚠️ إسقاط مادة بعد الميعاد (تقدير W)
+                    </button>
+                    <button class="badge badge-code" style="cursor: pointer;" onclick="quickDefense('أنا طالب خريج الترم ده ومتبقالي 22 ساعة والسيستم قافل على 18')">
+                        🎓 استثناء ساعات التخرج وزيادة العبء
+                    </button>
+                    <button class="badge badge-code" style="cursor: pointer;" onclick="quickDefense('عايز أعيد مادة جايب فيها D عشان أرفع التراكمي')">
+                        🔄 إعادة مادة للتحسين ورفع التراكمي
+                    </button>
+                </div>
+
+                <!-- Legal Defense Results Box -->
+                <div id="defenseAnalysisResult" style="display: none;">
+                    <!-- Rendered dynamically -->
+                </div>
+            </div>
+
+            <!-- Feature 2: Automated Formal Petition Generator -->
+            <div class="card" id="petitionGeneratorCard">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-pen-nib" style="color: #60a5fa;"></i> 2. صانع الالتماسات والخطابات الرسمية (Formal Petition Generator)</div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" onclick="copyPetitionText()">
+                            <i class="fa-solid fa-copy"></i> نسخ الالتماس
+                        </button>
+                        <button class="btn btn-primary" style="padding: 4px 10px; font-size: 0.8rem;" onclick="printPetition()">
+                            <i class="fa-solid fa-print"></i> طباعة الطلب الرسمي
+                        </button>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    صياغة إدارية قانونية رصينة موجهة لعميد الكلية أو وكيل شؤون الطلاب، مسنودة بأرقام مواد اللائحة ونصوصها الرسمية:
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 12px;">
+                    <input type="text" id="petStudentName" class="input-control" placeholder="اسم الطالب الكامل" value="محمد خالد علي" oninput="updatePetitionPreview()">
+                    <input type="text" id="petStudentId" class="input-control" placeholder="الرقم الجامعي / كود الطالب" value="20230491" oninput="updatePetitionPreview()">
+                    <input type="text" id="petStudentLevel" class="input-control" placeholder="الفرقة / المستوى" value="المستوى الثالث" oninput="updatePetitionPreview()">
+                    <input type="text" id="petCourseName" class="input-control" placeholder="اسم المادة المعنية" value="نظم التشغيل (CS301)" oninput="updatePetitionPreview()">
+                </div>
+                <div id="petitionOutputContainer" style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; font-family: 'Cairo', sans-serif; white-space: pre-wrap; line-height: 1.8; color: #f1f5f9;">
+                    <!-- Rendered text -->
+                </div>
+            </div>
+
+            <!-- Feature 3: Grade Retake ROI Calculator -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-chart-pie" style="color: #34d399;"></i> 3. حاسبة عائد الاستثمار في التحسين (Grade Retake ROI Calculator)</div>
+                    <span class="badge badge-success"><i class="fa-solid fa-arrow-trend-up"></i> GPA Impact / Credit Hour</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+                    الطالب بيحتار: "أعيد مادة جايب فيها D بساعتين، ولا مادة جايب فيها C بثلاث ساعات؟" — الأداة تحسب لك الـ GPA Impact بدقة اللائحة مع الأخذ في الاعتبار سقف تقدير التحسين (B):
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 15px;">
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--text-muted);">معدلك التراكمي الحالي (CGPA):</label>
+                        <input type="number" id="roiCurrentGpa" class="input-control" value="2.35" step="0.01" min="0" max="4.0" oninput="calculateRetakeROI()">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--text-muted);">إجمالي الساعات المكتملة حتى الآن:</label>
+                        <input type="number" id="roiTotalHours" class="input-control" value="45" min="3" max="150" oninput="calculateRetakeROI()">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--text-muted);">تقديرك السابق في المادة المراد تحسينها:</label>
+                        <select id="roiOldGrade" class="input-control" onchange="calculateRetakeROI()">
+                            <option value="F">F (0.0 نقاط - رسوب)</option>
+                            <option value="D" selected>D (1.7 نقاط - مقبول)</option>
+                            <option value="D+">D+ (2.0 نقاط - مقبول مرتفع)</option>
+                            <option value="C">C (2.3 نقاط - جيد)</option>
+                            <option value="C+">C+ (2.7 نقاط - جيد مرتفع)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--text-muted);">ساعات المادة المعتمدة:</label>
+                        <select id="roiCourseHours" class="input-control" onchange="calculateRetakeROI()">
+                            <option value="2">2 ساعات معتمدة</option>
+                            <option value="3" selected>3 ساعات معتمدة</option>
+                            <option value="4">4 ساعات معتمدة</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="roiResultCard" style="background: rgba(16, 185, 129, 0.08); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-md); padding: 18px;">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-search" class="tab-pane">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-brain"></i> محرك استرجاع المعلومات (Information Retrieval)</div>
+                    <span class="badge badge-code">TF-IDF & Cosine Similarity</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                    اكتب أي استفسار باللغة العربية للبحث في اللوائح والأنظمة الجامعية (يتم حساب أوزان الكلمات ومصفوفة التشابه لحظياً):
+                </p>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="irQueryInput" placeholder="مثال: عقوبة الغياب، حساب المعدل، مرتبة الشرف، شروط النجاح، الحرمان..." onkeydown="if(event.key==='Enter') executeIRSearch()">
+                </div>
+
+                <div class="quick-chips">
+                    <span style="color: var(--text-muted); font-size: 0.85rem; align-self: center;">استعلامات سريعة:</span>
+                    <div class="chip" onclick="quickSearch('نسبة الغياب وعقوبة الحرمان من الامتحان')">نسبة الغياب والحرمان</div>
+                    <div class="chip" onclick="quickSearch('حساب المعدل التراكمي ونقاط التقديرات')">حساب المعدل التراكمي</div>
+                    <div class="chip" onclick="quickSearch('الحد الأدنى والأقصى لتسجيل الساعات المعتمدة')">الحد الأقصى للساعات</div>
+                    <div class="chip" onclick="quickSearch('شروط مرتبة الشرف والإنذار الأكاديمي')">مرتبة الشرف والإنذار</div>
+                    <div class="chip" onclick="quickSearch('الانسحاب والحذف والإضافة')">الحذف والإضافة (Add & Drop)</div>
+                </div>
+
+                <button class="btn" style="width: 100%; margin-bottom: 25px;" onclick="executeIRSearch()">
+                    <i class="fa-solid fa-bolt"></i> ابدأ البحث الدلالي الذكي
+                </button>
+
+                <div id="irResultsContainer">
+                    <!-- Results populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Bylaws & Docs -->
+        <div id="tab-docs" class="tab-pane">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-book-open"></i> استعراض اللوائح الجامعية المعتمدة بالكامل</div>
+                </div>
+
+                <div class="doc-tabs">
+                    <button class="doc-tab active" onclick="loadDoc('attendance')">📜 لائحة الحضور والغياب</button>
+                    <button class="doc-tab" onclick="loadDoc('gpa')">📊 نظام التقديرات والمعدل (GPA)</button>
+                    <button class="doc-tab" onclick="loadDoc('registration')">📋 قواعد التسجيل والإرشاد الأكاديمي</button>
+                    <button class="doc-tab" onclick="loadDoc('exams')">📝 لائحة الامتحانات والأعذار</button>
+                </div>
+
+                <div class="doc-content" id="docViewerContent">
+                    جاري تحميل نص اللائحة...
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: GPA Calculator -->
+        <div id="tab-gpa" class="tab-pane">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-calculator"></i> حاسبة المعدل التراكمي والفصلي (GPA)</div>
+                    <button class="btn btn-outline" onclick="addGpaRow()"><i class="fa-solid fa-plus"></i> إضافة مادة</button>
+                </div>
+
+                <div id="gpaRowsContainer">
+                    <!-- Dynamic GPA Rows -->
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-top: 20px;">
+                    <button class="btn btn-success" onclick="calculateGPA()"><i class="fa-solid fa-check"></i> احسب المعدل الآن</button>
+                    <button class="btn btn-outline" onclick="resetGpa()"><i class="fa-solid fa-trash"></i> مسح</button>
+                </div>
+
+                <div class="callout" style="margin-top: 25px;">
+                    <div>
+                        <h4 style="font-size: 1.15rem; margin-bottom: 5px;" id="gpaStandingText">الحالة الأكاديمية: في انتظار الحساب</h4>
+                        <p style="color: var(--text-secondary);" id="gpaDetailsText">إجمالي الساعات: 0 | مجموع النقاط: 0.00</p>
+                    </div>
+                    <div class="callout-val" id="gpaResultVal">0.00</div>
+                </div>
+            </div>
+        </div>
+
+                <!-- TAB 6: Admin -->
+        <div id="tab-admin" class="tab-pane">
+            <div class="card" id="adminLoginSection">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-lock"></i> تسجيل دخول المسؤول الأكاديمي</div>
+                </div>
+                <div style="max-width: 400px; margin: 20px auto; text-align: center;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(99, 102, 241, 0.15); border: 1.5px solid var(--accent-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 15px;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.95rem;">منطقة محمية للمسؤولين فقط — يُرجى إدخال كلمة المرور للمتابعة</p>
+                    <input type="password" id="adminPwdInput" class="input-control" placeholder="أدخل كلمة مرور المسؤول..." onkeydown="if(event.key==='Enter') adminLogin()" style="margin-bottom: 12px; text-align: center;">
+                    <button class="btn" style="width: 100%;" onclick="adminLogin()"><i class="fa-solid fa-key"></i> دخول</button>
+                </div>
+            </div>
+
+            <div class="card" id="adminDashboardSection" style="display: none;">
+                <div class="card-header">
+                    <div class="card-title"><i class="fa-solid fa-user-shield"></i> لوحة التحكم والإدارة</div>
+                    <button class="btn btn-danger" onclick="adminLogout()"><i class="fa-solid fa-right-from-bracket"></i> خروج</button>
+                </div>
+
+                <h3 style="margin-bottom: 15px; font-size: 1.1rem; color: var(--accent-secondary);">➕ إضافة مقرر جديد للمستودع:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 15px;">
+                    <input type="text" id="newCid" class="input-control" placeholder="رمز المادة (مثال: CS305)">
+                    <input type="text" id="newName" class="input-control" placeholder="اسم المادة بالعربية">
+                    <input type="text" id="newInst" class="input-control" placeholder="المحاضر">
+                    <input type="text" id="newRoom" class="input-control" placeholder="القاعة / المعمل">
+                    <input type="number" id="newHours" class="input-control" placeholder="الساعات (3)" value="3">
+                    <input type="text" id="newPrereqs" class="input-control" placeholder="المتطلبات (CS101, MATH101)">
+                </div>
+                <button class="btn btn-success" onclick="adminAddCourse()"><i class="fa-solid fa-plus"></i> إضافة المقرر</button>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); margin: 30px 0;">
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="font-size: 1.1rem; color: var(--accent-warning);"><i class="fa-solid fa-download"></i> تصدير البيانات إلى مستودع GitHub:</h3>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                    يمكنك تنزيل ملفات الـ CSV والـ JSON المعدلة لرفعها مباشرة إلى مستودع جيت هاب لتبقى واجهة الويب والكونسول متزامنتين:
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn btn-outline" onclick="exportData('csv')"><i class="fa-solid fa-file-csv"></i> تحميل courses.csv</button>
+                    <button class="btn btn-outline" onclick="exportData('json')"><i class="fa-solid fa-file-code"></i> تحميل prerequisites.json</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLI Integration Banner Box -->
+        <div class="cli-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;">
+                <h3 style="color: #fff; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-terminal" style="color: var(--accent-secondary);"></i>
+                    واجهة الكونسول (Python CLI Edition) مربوطة بهذا الموقع
+                </h3>
+                <span class="badge badge-success"><i class="fa-solid fa-link"></i> متصل بالسيرفر الحي</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                يمكنك تشغيل واجهة الكونسول من سطر الأوامر على جهازك في أي وقت؛ حيث تقوم بجلب البيانات الحية مباشرة من هذا الموقع المرفوع على جيت هاب:
+            </p>
+            <div class="cli-code">
+                <span>python cli_online.py</span>
+                <span style="color: var(--text-muted); font-size: 0.8rem;"># تشغيل واجهة الكونسول المتصلة أونلاين</span>
+            </div>
+        </div>
+
+        
+        <!-- ============================================================================= -->
+        <!--  Developed By — فريق العمل والمطورين القائمين على المشروع (Visible at bottom) -->
+        <!-- ============================================================================= -->
+        <section class="developed-by-section" id="developedBySection">
+            <div class="developed-by-header">
+                <div class="dev-badge-pill">
+                    <i class="fa-solid fa-code"></i> Engineering & Architecture Team
+                </div>
+                <h2 class="developed-by-title">
+                    🎓 Developed By — فريق العمل والمطورين القائمين على المشروع
+                </h2>
+                <p class="developed-by-subtitle">
+                    مشروع <strong>دليل الطالب الذكي (Smart Student Guide)</strong> تم تصميمه وهندسته بالكامل بواسطة طلاب كلية الحاسبات والذكاء الاصطناعي. تواصل معنا مهنياً عبر لينكد إن:
+                </p>
+            </div>
+
+            <div class="dev-grid" id="devTeamGrid">
+                <!-- Cards populated dynamically from DEV_TEAM data with dedicated LinkedIn buttons -->
+            </div>
+
+            <!-- Customization Panel for adding/editing developers -->
+            <div style="margin-top: 30px; padding: 22px; background: rgba(15, 23, 42, 0.65); border: 1px dashed rgba(56, 189, 248, 0.35); border-radius: var(--radius-md);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                    <h4 style="color: #38bdf8; margin: 0; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-user-pen"></i> تخصيص بيانات المطورين وروابط LinkedIn الشخصية
+                    </h4>
+                    <button class="btn btn-outline" style="font-size: 0.8rem; padding: 5px 14px;" onclick="resetDevTeamToDefault()">
+                        <i class="fa-solid fa-rotate-left"></i> استعادة البيانات الافتراضية
+                    </button>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                    يمكنكم تعديل أسماء الزملاء في الفريق أو وضع روابط حساباتكم على LinkedIn مباشرة ليتم تفعيلها في الأيقونات فوراً وحفظها:
+                </p>
+                <div id="devTeamEditorList" style="display: flex; flex-direction: column; gap: 14px;">
+                    <!-- Inputs for developers -->
+                </div>
+                <div style="margin-top: 18px; text-align: left;">
+                    <button class="btn btn-primary" onclick="saveDevTeamChanges()">
+                        <i class="fa-solid fa-floppy-disk"></i> حفظ تحديثات فريق المطورين
+                    </button>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <p>Smart Student Guide — دليل الطالب الذكي © 2026</p>
+            <p style="margin-top: 4px; color: var(--text-muted);">
+                مشروع جامعي متكامل لكلية الحاسبات والذكاء الاصطناعي | مدعوم بخوارزميات TF-IDF ومحرك استنتاج المتطلبات
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Application Logic (Client-Side Database & Search Algorithms) -->
+    <script>
+        // ==========================================
+        // 1. Data Store (Courses, Prereqs, Docs)
+        // ==========================================
+        let CAREER_TRACKS = {"tracks": [{"id": "ai_ml", "name": "AI & Machine Learning", "name_ar": "الذكاء الاصطناعي وتعلم الآلة", "icon": "🤖", "badge_color": "#8b5cf6", "summary": "بناء نماذج الذكاء الاصطناعي، الشبكات العصبية، ومعالجة اللغات والرؤية الحاسوبية.", "required_skills": ["Python", "Linear Algebra", "Probability & Statistics", "Data Preprocessing", "Supervised Learning", "Unsupervised Learning", "Deep Learning", "Neural Networks", "Model Evaluation", "PyTorch / TensorFlow", "Feature Engineering", "MLOps & Deployment"], "market_tools": ["PyTorch", "TensorFlow", "Scikit-Learn", "Pandas", "NumPy", "HuggingFace", "MLflow", "Docker", "JupyterLab"], "job_titles": ["Machine Learning Engineer", "Data Scientist", "AI Research Engineer", "NLP Specialist", "Computer Vision Engineer"], "target_roles_ar": "مهندس تعلم آلة، عالم بيانات، باحث ذكاء اصطناعي", "average_salary_egy": "25,000 - 65,000 ج.م شهرياً"}, {"id": "data_engineering", "name": "Data Engineering & Big Data", "name_ar": "هندسة البيانات والبيانات الضخمة", "icon": "🗄️", "badge_color": "#0284c7", "summary": "تصميم وتطوير خطوط نقل ومعالجة البيانات (Pipelines) وإدارة مستودعات البيانات الضخمة.", "required_skills": ["Advanced SQL", "Relational Schema Design", "Python", "ETL / ELT Pipelines", "Data Warehousing", "NoSQL Databases", "Distributed Computing", "Linux OS", "Docker & Containerization", "Cloud Storage Basics"], "market_tools": ["Apache Spark", "Apache Airflow", "PostgreSQL", "MongoDB", "Kafka", "Docker", "Snowflake / BigQuery", "dbt"], "job_titles": ["Data Engineer", "Big Data Developer", "ETL Architect", "Data Warehouse Specialist"], "target_roles_ar": "مهندس بيانات، مطور أنظمة استخراج وتحويل البيانات، متخصص مستودعات بيانات", "average_salary_egy": "22,000 - 55,000 ج.م شهرياً"}, {"id": "fullstack", "name": "Full-Stack Web Development", "name_ar": "تطوير تطبيقات الويب المتكاملة", "icon": "🌐", "badge_color": "#10b981", "summary": "بناء الواجهات الأمامية التفاعلية وتصميم وبناء الخدمات الخلفية وقواعد البيانات السحابية.", "required_skills": ["HTML/CSS & Modern JS", "TypeScript", "Frontend Framework (React/Next)", "Backend APIs (REST & GraphQL)", "Database Integration (SQL & ORM)", "Authentication & Security (JWT, OAuth)", "Concurrency & Async Programming", "Git & CI/CD", "Containerization (Docker)", "Cloud Deployment"], "market_tools": ["React", "Next.js", "Node.js / Express", "FastAPI / Django", "PostgreSQL", "Docker", "Git/GitHub", "Redis", "TailwindCSS"], "job_titles": ["Full-Stack Developer", "Backend Engineer", "Software Engineer", "Web Applications Architect"], "target_roles_ar": "مطور ويب متكامل، مهندس برمجيات خلفية، مهندس حلول ويب", "average_salary_egy": "18,000 - 50,000 ج.م شهرياً"}, {"id": "cybersecurity", "name": "Cybersecurity & Ethical Hacking", "name_ar": "أمن المعلومات واختبار الاختراق", "icon": "🛡️", "badge_color": "#ef4444", "summary": "حماية البنية التحتية، فحص الثغرات الأمنية، التحقيق الجنائي الرقمي، واختبار الاختراق الأخلاقي.", "required_skills": ["Computer Networking Protocols (TCP/IP)", "Linux System Administration", "Cryptography & Encryption", "Vulnerability Assessment", "Penetration Testing", "Web Application Security (OWASP Top 10)", "Network Defense & Firewalls", "Python / Bash Scripting", "Incident Response"], "market_tools": ["Wireshark", "Burp Suite", "Nmap", "Metasploit", "Kali Linux", "Snort", "Ghidra", "Splunk"], "job_titles": ["Security Analyst", "Penetration Tester", "SOC Analyst (L1/L2)", "Information Security Engineer"], "target_roles_ar": "محلل أمني، مختبر اختراق، مهندس أمن شبكات ونظم", "average_salary_egy": "20,000 - 60,000 ج.م شهرياً"}, {"id": "embedded_iot", "name": "Embedded Systems & IoT", "name_ar": "الأنظمة المدمجة وإنترنت الأشياء", "icon": "⚙️", "badge_color": "#f97316", "summary": "برمجة المتحكمات الدقيقة، أنظمة الزمن الحقيقي، وربط الأجهزة الذكية والمستشعرات بشبكة الإنترنت.", "required_skills": ["Embedded C / C++", "Computer Architecture & Assembly", "Microcontrollers (ARM Cortex / AVR)", "Communication Protocols (UART, SPI, I2C)", "Real-Time Operating Systems (RTOS)", "Sensors & Actuators Interfacing", "Digital Logic & Circuit Debugging", "IoT Protocols (MQTT, HTTP)"], "market_tools": ["STM32CubeIDE", "FreeRTOS", "Keil uVision", "PlatformIO", "Proteus", "Logic Analyzers", "Oscilloscopes", "Git"], "job_titles": ["Embedded Software Engineer", "Firmware Engineer", "IoT Systems Developer", "Hardware Interface Specialist"], "target_roles_ar": "مهندس أنظمة مدمجة، مطور برمجيات العتاد، مهندس إنترنت الأشياء", "average_salary_egy": "20,000 - 55,000 ج.م شهرياً"}, {"id": "cloud_devops", "name": "Cloud Computing & DevOps", "name_ar": "الحوسبة السحابية وهندسة الـ DevOps", "icon": "☁️", "badge_color": "#06b6d4", "summary": "أتمتة دورة حياة البرمجيات، إدارة البنية التحتية البرمجية، ونشر الأنظمة السحابية عالية التوافر.", "required_skills": ["Linux Administration", "Networking & DNS", "Docker & Containerization", "Kubernetes & Orchestration", "CI/CD Pipelines (GitHub Actions / GitLab)", "Infrastructure as Code (Terraform)", "Cloud Architecture (AWS / Azure / GCP)", "Monitoring & Observability (Prometheus, Grafana)", "Bash & Python Automation"], "market_tools": ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "AWS", "Ansible", "Prometheus", "Grafana", "Linux"], "job_titles": ["DevOps Engineer", "Cloud Infrastructure Engineer", "Site Reliability Engineer (SRE)", "Release Engineer"], "target_roles_ar": "مهندس ديف أوبس، مهندس بنية سحابية، مهندس استقرار الأنظمة", "average_salary_egy": "25,000 - 65,000 ج.م شهرياً"}]};
+        let COURSE_SKILLS = {"CS101": {"course_name": "مقدمة في البرمجة (Python & C++)", "skills": ["Python", "C Programming", "Computational Thinking", "Problem Solving", "Control Flow & Functions"], "is_elective": false, "practical_project": "تطوير تطبيق لإدارة الدرجات وحساب المعدل التراكمي في سطر الأوامر بلغة بايثون وC++.", "cv_bullet": "Developed modular command-line applications adhering to clean architecture and algorithmic efficiency in Python & C++."}, "CS102": {"course_name": "هياكل البيانات والخوارزميات", "skills": ["Data Structures", "Algorithms", "Time & Space Complexity", "Recursion", "Searching & Sorting"], "is_elective": false, "practical_project": "بناء مكتبة متكاملة لهياكل البيانات (Linked Lists, Binary Search Trees, Heaps, Hash Tables) مع تحليل Big-O.", "cv_bullet": "Implemented core data structures and graph algorithms from scratch; benchmarked runtime performance and cache efficiency."}, "CS201": {"course_name": "البرمجة كائنية التوجه (OOP & Design Patterns)", "skills": ["OOP", "Design Patterns", "Software Architecture", "Encapsulation & Polymorphism", "Unit Testing"], "is_elective": false, "practical_project": "تصميم نظام حجز ومبيعات بنكي متكامل بتطبيق مبادئ SOLID وتطبيق أنماط التصميم (Factory, Observer, Singleton).", "cv_bullet": "Architected domain-driven applications utilizing SOLID principles, design patterns, and automated test-driven suites."}, "CS202": {"course_name": "تنظيم وعمارة الحاسب", "skills": ["Computer Architecture & Assembly", "Digital Logic & Circuit Debugging", "Memory Hierarchy", "Pipelining"], "is_elective": false, "practical_project": "محاكاة معالج 16-bit مصغر بمجموعة أوامر مخصصة وبرمجة برامج بلغة التجميع (MIPS/x86).", "cv_bullet": "Simulated CPU datapaths, control units, and cache coherence architectures; authored optimized assembly routines."}, "CS301": {"course_name": "نظم التشغيل والبرمجة المتزامنة", "skills": ["Linux OS", "Concurrency & Async Programming", "Process Scheduling", "Memory Management", "Multithreading & IPC"], "is_elective": false, "practical_project": "برمجة غلاف سطر أوامر مصغر (Mini Unix Shell) يدعم تعدد الخيوط ومزامنة العمليات باستخدام Mutex وSemaphores.", "cv_bullet": "Constructed multi-threaded POSIX systems with IPC primitives; engineered resource synchronizers preventing deadlocks."}, "CS302": {"course_name": "شبكات الحاسب وأمن الشبكات", "skills": ["Computer Networking Protocols (TCP/IP)", "Network Defense & Firewalls", "Socket Programming", "Wireshark Packet Analysis"], "is_elective": false, "practical_project": "برمجة خادم ويب HTTP وخادم دردشة مشفر عبر TCP/IP Sockets، وتحليل تدفق الحزم عبر Wireshark.", "cv_bullet": "Engineered low-level network socket protocols; conducted deep packet inspection and network vulnerability audits."}, "CS303": {"course_name": "هندسة البرمجيات وإدارة المشاريع", "skills": ["Software Architecture", "Git & CI/CD", "Agile / Scrum", "Requirement Engineering", "System Modeling (UML)"], "is_elective": false, "practical_project": "تطبيق دورة حياة تطوير برمجية كاملة (SDLC) لفريق مكون من 5 أفراد مع إدارة الـ Backlog والأتمتة.", "cv_bullet": "Orchestrated Agile delivery pipelines using Git workflows, continuous integration, and UML architectural blueprints."}, "CS401": {"course_name": "تطوير تطبيقات الويب المتكاملة (Full-Stack)", "skills": ["HTML/CSS & Modern JS", "Frontend Framework (React/Next)", "Backend APIs (REST & GraphQL)", "Database Integration (SQL & ORM)", "Authentication & Security (JWT, OAuth)"], "is_elective": true, "practical_project": "بناء منصة تجارة إلكترونية متكاملة بواجهة React وخلفية Node/FastAPI، مع نظام دفع وتوثيق JWT.", "cv_bullet": "Delivered production-grade full-stack web platforms with scalable RESTful endpoints, state management, and secured auth."}, "CS402": {"course_name": "أمن المعلومات واختبار الاختراق", "skills": ["Penetration Testing", "Vulnerability Assessment", "Web Application Security (OWASP Top 10)", "Cryptography & Encryption", "Incident Response"], "is_elective": true, "practical_project": "إجراء فحص أمني واختبار اختراق لموقع تجريبي وتوثيق ثغرات SQL Injection وXSS مع كتابة تقرير معالجة رسمي.", "cv_bullet": "Executed penetration audits covering OWASP Top 10 vectors; engineered defensive cryptographic countermeasures."}, "CS403": {"course_name": "الحوسبة السحابية وDevOps", "skills": ["Docker & Containerization", "Kubernetes & Orchestration", "CI/CD Pipelines (GitHub Actions / GitLab)", "Infrastructure as Code (Terraform)", "Cloud Deployment"], "is_elective": true, "practical_project": "نشر بنية تحتية سحابية كاملة باستخدام Docker Compose وKubernetes على سحابة مجانية مع خط أنابيب CI/CD تلقائي.", "cv_bullet": "Deployed resilient containerized microservices utilizing Docker, Kubernetes, and automated GitHub Actions pipelines."}, "MATH101": {"course_name": "تفاضل وتكامل 1", "skills": ["Calculus", "Optimization", "Gradient Descent Principles", "Mathematical Modeling"], "is_elective": false, "practical_project": "تطبيق برمجي لحساب التفاضل العددي وتحسين دوال التكلفة باستخدام خوارزمية الانحدار التدريجي.", "cv_bullet": "Applied mathematical calculus and gradient optimization techniques directly into numerical computing algorithms."}, "MATH102": {"course_name": "جبر خطي وإحصاء احتمالي", "skills": ["Linear Algebra", "Probability & Statistics", "Matrix Transformations", "Principal Component Analysis (PCA)", "Vector Spaces"], "is_elective": false, "practical_project": "تطبيق خوارزمية تحليل المركبات الرئيسية (PCA) لضغط الصور وخفض الأبعاد الحسابية في بايثون.", "cv_bullet": "Formulated matrix decomposition and statistical inference models underpinning multidimensional data processing."}, "MATH201": {"course_name": "رياضيات متقطعة ونظرية المخططات", "skills": ["Graph Theory", "Combinatorics", "Discrete Proofs", "Boolean Logic", "State Machines"], "is_elective": false, "practical_project": "تطبيق خوارزميات المسار الأقصر وشجرة الامتداد الأصغري على شبكات توزيع المدن والمواصلات.", "cv_bullet": "Leveraged graph theory models and combinatorial methods to optimize complex routing and connectivity constraints."}, "IS201": {"course_name": "نظم قواعد البيانات وتصميمها", "skills": ["Advanced SQL", "Relational Schema Design", "Database Normalization", "Transactions & ACID", "Query Optimization"], "is_elective": false, "practical_project": "تصميم قاعدة بيانات علائقية كاملة لمستشفى (ERD ثم التطبيع للـ 3NF)، وكتابة استعلامات معقدة وفهارس.", "cv_bullet": "Engineered 3NF normalized SQL database schemas with complex joins, indexes, stored procedures, and ACID compliance."}, "IS301": {"course_name": "مستودعات البيانات وتنظيم ETL", "skills": ["ETL / ELT Pipelines", "Data Warehousing", "NoSQL Databases", "Distributed Computing", "Data Cleansing"], "is_elective": true, "practical_project": "بناء مسار نقل بيانات آلي (ETL) يسحب البيانات من مصادر متعددة، يطهرها، ويضخها في مستودع بيانات ونموذج Star Schema.", "cv_bullet": "Built resilient ETL pipelines ingesting and transforming heterogeneous datasets into optimized star-schema analytical warehouses."}, "AI201": {"course_name": "أساسيات الذكاء الاصطناعي ونظم المعرفة", "skills": ["Heuristic Search (A*, Minimax)", "Knowledge Representation", "Expert Systems", "Constraint Satisfaction", "Game Theory Basics"], "is_elective": false, "practical_project": "بناء محرك ذكاء اصطناعي للعبة الشطرنج/Connect-4 باستخدام خوارزمية Minimax مع تقليم Alpha-Beta.", "cv_bullet": "Programmed heuristic search algorithms (A*, Minimax with Alpha-Beta pruning) solving adversarial game-state decision trees."}, "AI202": {"course_name": "تعلم الآلة (Machine Learning)", "skills": ["Supervised Learning", "Unsupervised Learning", "Data Preprocessing", "Feature Engineering", "Model Evaluation", "Scikit-Learn"], "is_elective": false, "practical_project": "بناء نموذج تنبؤ أسعار العقارات والكشف عن الاحتيال المصرفي باستخدام Random Forests وSVM مع ضبط المعاملات الفائقة.", "cv_bullet": "Trained predictive regression and classification models with Scikit-Learn; performed cross-validation and hyperparameter tuning."}, "AI301": {"course_name": "التعلم العميق ورؤية الحاسب (Deep Learning)", "skills": ["Deep Learning", "Neural Networks", "Convolutional Neural Networks (CNN)", "PyTorch / TensorFlow", "Computer Vision", "Transfer Learning"], "is_elective": true, "practical_project": "تدريب شبكة CNN عميقة لتشخيص صور الأشعة الطبية واكتشاف الأورام بدقة تجاوزت 94% باستخدام PyTorch وResNet.", "cv_bullet": "Developed deep convolutional neural networks with PyTorch; harnessed transfer learning architectures for visual classification."}, "AI302": {"course_name": "معالجة اللغات الطبيعية (NLP & LLMs)", "skills": ["Natural Language Processing", "Transformers & Attention", "Text Embeddings", "Sentiment Analysis", "HuggingFace & LLMs"], "is_elective": true, "practical_project": "بناء روبوت محادثة تفاعلي ونظام تحليل مشاعر للنصوص العربية باستخدام Transformers ومكتبة HuggingFace.", "cv_bullet": "Fine-tuned Transformer models for Arabic textual semantics, sentiment classification, and semantic vector retrieval."}, "ROB201": {"course_name": "مقدمة في الروبوتات والأنظمة المدمجة", "skills": ["Embedded C / C++", "Microcontrollers (ARM Cortex / AVR)", "Sensors & Actuators Interfacing", "Pulse Width Modulation (PWM)", "Hardware Debugging"], "is_elective": true, "practical_project": "تصميم روبوت ذكي متتبع للمسار ومتفادي للعوائق باستخدام متحكم Atmega32 وحساسات الموجات فوق الصوتية.", "cv_bullet": "Programmed bare-metal AVR microcontrollers interfacing analog sensors, PID motor drivers, and serial communication buses."}, "ROB301": {"course_name": "نظم الزمن الحقيقي وإنترنت الأشياء (RTOS & IoT)", "skills": ["Real-Time Operating Systems (RTOS)", "Communication Protocols (UART, SPI, I2C)", "IoT Protocols (MQTT, HTTP)", "FreeRTOS Task Scheduling"], "is_elective": true, "practical_project": "نظام محطة طقس ذكية متصل بالسحابة عبر بروتوكول MQTT ومعالج مهام متزامن يعمل على FreeRTOS وESP32.", "cv_bullet": "Architected low-latency IoT telemetric firmware utilizing FreeRTOS multitasking primitives and secured MQTT cloud telemetry."}};
+        let BRIDGE_ROADMAPS = {"PyTorch / TensorFlow": [{"title": "Deep Learning Specialization - Andrew Ng (Coursera)", "platform": "Coursera / DeepLearning.AI", "cost": "مجاني (Financial Aid متاح)", "duration": "4 أسابيع", "url": "https://www.coursera.org/specializations/deep-learning", "practical_tool": "PyTorch / TensorFlow"}, {"title": "Practical Deep Learning for Coders - fast.ai", "platform": "fast.ai", "cost": "مجاني بالكامل 100%", "duration": "3 أسابيع", "url": "https://course.fast.ai/", "practical_tool": "PyTorch"}], "MLOps & Deployment": [{"title": "Made With ML (MLOps Course)", "platform": "Goku Mohandas / OpenSource", "cost": "مجاني 100%", "duration": "أسبوعان", "url": "https://madewithml.com/", "practical_tool": "MLflow & Docker"}], "Docker & Containerization": [{"title": "Docker Tutorial for Beginners (freeCodeCamp)", "platform": "YouTube / freeCodeCamp", "cost": "مجاني 100%", "duration": "أسبوع واحد", "url": "https://www.youtube.com/watch?v=fqMOX6JJhGo", "practical_tool": "Docker & Compose"}], "Kubernetes & Orchestration": [{"title": "Kubernetes Course for Beginners (Nana)", "platform": "TechWorld with Nana", "cost": "مجاني 100%", "duration": "أسبوعان", "url": "https://www.youtube.com/watch?v=X48VuDVv0do", "practical_tool": "Minikube / K8s"}], "ETL / ELT Pipelines": [{"title": "Data Engineering Zoomcamp", "platform": "DataTalksClub (GitHub)", "cost": "مجاني 100%", "duration": "6 أسابيع", "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp", "practical_tool": "Airflow & Spark"}], "NoSQL Databases": [{"title": "MongoDB Basics & Aggregation", "platform": "MongoDB University", "cost": "مجاني مع شهادة رسمية", "duration": "أسبوعان", "url": "https://learn.mongodb.com/", "practical_tool": "MongoDB Compass"}], "Frontend Framework (React/Next)": [{"title": "Full Modern React & Next.js Tutorial", "platform": "Scrimba / Next.js Docs", "cost": "مجاني 100%", "duration": "3 أسابيع", "url": "https://nextjs.org/learn", "practical_tool": "Next.js 14 App Router"}], "Penetration Testing": [{"title": "Practical Ethical Hacking - Heath Adams / TryHackMe", "platform": "TryHackMe (Pre-Security & Jr Pentester)", "cost": "مسارات مجانية وتطبيق تفاعلي", "duration": "4 أسابيع", "url": "https://tryhackme.com/", "practical_tool": "Metasploit & Burp Suite"}], "Web Application Security (OWASP Top 10)": [{"title": "PortSwigger Web Security Academy", "platform": "PortSwigger (Burp Suite Creators)", "cost": "مجاني 100% مع معامل تدريب حية", "duration": "3 أسابيع", "url": "https://portswigger.net/web-security", "practical_tool": "Burp Suite Community"}], "Microcontrollers (ARM Cortex / AVR)": [{"title": "Embedded Systems Bare-Metal Programming from Ground Up", "platform": "FastBit Embedded Brain Academy / EdX", "cost": "متاح مجاناً", "duration": "4 أسابيع", "url": "https://www.youtube.com/@FastBitEmbeddedBrainAcademy", "practical_tool": "STM32 & Keil"}], "Real-Time Operating Systems (RTOS)": [{"title": "Mastering FreeRTOS & Kernel Primitives", "platform": "FreeRTOS Official Guides / Digikey", "cost": "مجاني 100%", "duration": "أسبوعان", "url": "https://www.freertos.org/Documentation/RTOS_book.html", "practical_tool": "FreeRTOS on ESP32"}], "CI/CD Pipelines (GitHub Actions / GitLab)": [{"title": "Automate Everything with GitHub Actions", "platform": "GitHub Skills", "cost": "مجاني 100%", "duration": "أسبوع واحد", "url": "https://skills.github.com/", "practical_tool": "GitHub Actions"}]};
+        let BYLAW_RULES = {"rules": [{"id": "RULE_ABSENCE_EXCUSE", "category": "الحضور والغياب والأعذار", "keywords": ["غياب", "عذر", "مرض", "مستشفى", "عملية", "حرمان", "إنذار", "تظلم", "تقرير طبي"], "article_number": "المادة (24) - فقرة (ب)", "bylaw_name": "لائحة شؤون التعليم والطلاب - نظام الساعات المعتمدة", "legal_text": "يجوز لمجلس الكلية بناءً على اقتراح مجلس القسم المختص ولجنة شؤون الطلاب، قبول العذر المرضي أو القهري للطالب ورفع قرار الحرمان إذا قُدّم التقرير الطبي المعتمد من الإدارة الطبية بالجامعة خلال 48 ساعة من تاريخ زوال العذر، وبشرط ألا يتجاوز الغياب الإجمالي 35% من الساعات الفعلية للمقرر.", "success_rate": 88, "success_label": "احتمالية قبول مرتفعة جداً (88%) في حال استيفاء التقرير الطبي", "requirements": ["تقرير طبي معتمد من المستشفى الجامعي / الإدارة الطبية", "تقديم الطلب خلال 48 ساعة من الأزمة", "ألا يتجاوز الغياب 35%"], "petition_template": "السيد الأستاذ الدكتور / وكيل الكلية لشؤون التعليم والطلاب\nتحية طيبة وبعد،،،\n\nمقدمه لسيادتكم الطالب: {student_name}، المقيد بالمستوى: {student_level}، قسم/تخصص: {student_major}، كود جامعي: {student_id}.\n\nالموضوع: التماس استثناء واحتساب عذر مرضي رسمي عن فترة الغياب المقررة.\n\nأحيط سيادتكم علماً بأنه قد ألمّ بي عارض صحي طارئ ومفاجئ حال دون حضوري المحاضرات والتدريبات العملية في الفترة من {date_start} إلى {date_end} في مقرر: {course_name} ({course_id}).\n\nوحيث تنص لائحة الكلية في المادة (24) فقرة (ب) على أحقية الطالب في قبول العذر الطبي القهري المعتمد من الإدارة الطبية الجامعية ورفع قرار الحرمان متى روعيت شروط التقدم، أرجو من سيادتكم التكرم بالموافقة على إحالة تقريري الطبي المرفق إلى اللجنة الطبية المختصة واعتماد احتساب الغياب بعذر رسمي ورفع اسمي من كشوف الحرمان حفاظاً على مستقبلي الدراسي.\n\nوتفضلوا بقبول فائق الاحترام والتقدير،،،\n\nمقدمه لسيادتكم:\nالاسم: {student_name}\nالرقم الجامعي: {student_id}\nالتاريخ: {current_date}\nالتوقيع: ____________________"}, {"id": "RULE_MIDTERM_MAKEUP", "category": "الامتحانات النصفية والتكميلية", "keywords": ["ميدتيرم", "امتحان أعمال سنة", "تكميلي", "إعادة امتحان", "تخلف عن الامتحان", "حادث", "ظرف صحي"], "article_number": "المادة (31) - بند (ج)", "bylaw_name": "لائحة الامتحانات والتقويم الطلابي", "legal_text": "إذا تخلف الطالب عن أداء اختبار منتصف الفصل الدراسي (Midterm) بعذر قهري يقبله عميد الكلية أو أستاذ المادة، يُعقد له اختبار تكميلي مماثل قبل نهاية الفصل الدراسي بأسبوعين على الأقل، أو تُرحّل درجة الامتحان النهائي لتغطي النسبة المفقودة بناءً على قرار مجلس القسم.", "success_rate": 82, "success_label": "فرصة قبول قوية (82%) بتصديق أستاذ المقرر والعميد", "requirements": ["مستند العذر القهري أو الشهادة المرضية", "إفادة من أستاذ المقرر بعدم أداء الاختبار", "تقديم الطلب قبل نهاية الأسبوع العاشر"], "petition_template": "السيد الأستاذ الدكتور / عميد الكلية ورئيس مجلس الكلية\nتحية إجلال وتقدير وبعد،،،\n\nمقدمه لسيادتكم الطالب: {student_name}، الرقم الجامعي: {student_id}، المقيد بالفرقة: {student_level}.\n\nالموضوع: طلب عقد اختبار تكميلي لاختبار منتصف الفصل الدراسي (Midterm).\n\nنظراً لتعرضي لظرف طارئ وقاهر مثبت بالأوراق الرسمية المرفقة، تعذر عليّ حضور اختبار منتصف الفصل في مقرر: {course_name} ({course_id}) الذي انعقد بتاريخ: {exam_date}.\n\nواستناداً إلى نص المادة (31) بند (ج) من لائحة الكلية المنظمة لإجراء الاختبارات التعويضية والتكميلية للطلاب ذوي الأعذار المعتمدة، ألتمس من سيادتكم التكرم بالموافقة على عقد امتحان تكميلي لي بالتنسيق مع أستاذ المادة، أو التوجيه بما يلزم لإنصافي دراسياً وعدم حرماني من درجات أعمال السنة.\n\nشاكراً لسيادتكم حسن تعاونكم ورعايتكم الأبوية للطلاب،،،\n\nمقدمه لسيادتكم:\nالاسم: {student_name}\nالرقم الأكاديمي: {student_id}\nالتاريخ: {current_date}\nالتوقيع: ____________________"}, {"id": "RULE_LATE_DROP", "category": "الحذف والإسقاط الاستثنائي للمقررات", "keywords": ["إسقاط مادة", "حذف بعد الميعاد", "إسقاط اضطراري", "سحب مقرر", "تعثر مفاجئ", "مرض مزمن", "W"], "article_number": "المادة (18) - فقرة (3) استثناءات الحذف الإداري", "bylaw_name": "قواعد التسجيل والانسحاب الأكاديمي", "legal_text": "يجوز بقرار استثنائي من عميد الكلية بعد أخذ رأي المرشد الأكاديمي السماح للطالب بالانسحاب الاضطراري (Emergency Withdrawal) من مقرر أو مقررين بعد انقضاء المهلة الرسمية المحددة في الأسبوع الثامن، وتسجيل تقدير (W) دون احتسابه رسوباً، إذا ثبت حدوث ظرف قاهر يمنع استكمال المادة.", "success_rate": 74, "success_label": "احتمالية قبول جيدة (74%) وتتطلب توصية المرشد الأكاديمي", "requirements": ["موافقة خطية من المرشد الأكاديمي", "إثبات تعثر يستحيل معه أداء المتبقي", "ألا يقل العبء المتبقي بعد الإسقاط عن 9 ساعات (إلا بقرار خاص)"], "petition_template": "السيد الأستاذ الدكتور / عميد الكلية\nتحية طيبة وبعد،،،\n\nمقدمه لسيادتكم الطالب: {student_name}، الرقم الأكاديمي: {student_id}، المرشد الأكاديمي: {advisor_name}.\n\nالموضوع: التماس إسقاط مادة استثنائياً بعذر قهري وتسجيل تقدير (W).\n\nأرجو إحاطة سيادتكم علماً بأنني أمرّ بظروف استثنائية قاهرة خارجة عن إرادتي تجعل من المستحيل الاستمرار في تحصيل مقرر: {course_name} ({course_id}) لهذا الفصل الدراسي، مع بقاء معدلي مهدداً بالهبوط الحاد.\n\nوحيث تُجيز المادة (18) فقرة (3) من لائحة نظام الساعات المعتمدة لعميد الكلية الموافقة على الانسحاب الاستثنائي وتسجيل التقدير المحايد (W) حمايةً لمستقبل الطالب الأكاديمي، ألتمس من سيادتكم الموافقة الكريمة على إسقاط المقرر المذكور اضطرارياً وتثبيت تقدير الانسحاب بعذر.\n\nولسيادتكم وافر التقدير والاحترام،،،\n\nمقدمه:\nالاسم: {student_name}\nكود الطالب: {student_id}\nتوقيع المرشد الأكاديمي: ____________________\nتوقيع الطالب: ____________________"}, {"id": "RULE_GRAD_MAX_HOURS", "category": "العبء الدراسي واستثناءات التخرج", "keywords": ["ساعات التخرج", "زيادة الساعات", "أوفر لود", "تخرج الصيف", "21 ساعة", "24 ساعة", "الحد الأقصى"], "article_number": "المادة (12) - فقرة (د) الخاصة بدفعة التخرج", "bylaw_name": "الحد الأقصى للعبء الدراسي واستثناءات التخرج", "legal_text": "يُستثنى الطالب المتوقع تخرجه في فصل دراسي أو صيفي من شرط الحد الأقصى للعبء الدراسي، ويجوز لمجلس الكلية السماح له بتسجيل حتى (21 إلى 24 ساعة معتمدة) في الفصل الاعتيادي، أو حتى (9 إلى 10 ساعات) في الفصل الصيفي إذا كان اجتياز هذه المقررات هو الشرط الوحيد لإتمام تخرجه ولم يتبق له غيرها.", "success_rate": 95, "success_label": "احتمالية قبول شبه مؤكدة (95%) بحكم حق التخرج الدستوري في اللائحة", "requirements": ["مراجعة ملف التخرج من إدارة شؤون الطلاب (شهادة بأنها المقررات المتبقية فقط)", "معدل تراكمي لا يقل عن 2.0"], "petition_template": "السيد الأستاذ الدكتور / وكيل الكلية لشؤون التعليم والطلاب\nتحية مباركة وبعد،،،\n\nمقدمه لسيادتكم الطالب الخريج: {student_name}، الرقم الجامعي: {student_id}، قسم: {student_major}.\n\nالموضوع: طلب استثناء زيادة الحد الأقصى للساعات المعتمدة (تخرج).\n\nيرجى التكرم بالإحاطة بأن هذا الفصل الدراسي هو فصلي الدراسي الأخير بالكلية، ومتبقٍ لي على إتمام متطلبات التخرج ونيل درجة البكالوريوس عدد ({remaining_hours}) ساعة معتمدة، وهي تزيد بمقدار ({extra_hours}) ساعة عن الحد الأقصى المتاح للتسجيل في نظام التسجيل الإلكتروني.\n\nوحيث تنص المادة (12) فقرة (د) من لائحة الكلية صراحةً على استثناء الطلاب الخريجين ورفع سقف التسجيل لتمكينهم من استيفاء شروط التخرج، ألتمس من سيادتكم التكرم بالموافقة على فتح التسجيل الاستثنائي للمقررات المتبقية تمهيداً لمنحي شهادة التخرج في موعدها المحدد.\n\nشاكراً لسيادتكم دعمكم الدائم لأبنائكم الخريجين،،،\n\nمقدمه لسيادتكم:\nالاسم: {student_name}\nالرقم الجامعي: {student_id}\nالتاريخ: {current_date}\nالتوقيع: ____________________"}, {"id": "RULE_RETAKE_POLICY", "category": "إعادة المواد والتحسين (Retake ROI)", "keywords": ["إعادة", "تحسين", "سقف التقدير", "D", "F", "رفع المعدل", "ريتيك", "احتساب أعلى درجة"], "article_number": "المادة (28) - تنظيم إعادة المقررات والتحسين", "bylaw_name": "لائحة التقويم واحتساب التقديرات المكررة", "legal_text": "يحق للطالب إعادة أي مقرر رسب فيه (تقدير F) أو حصل فيه على تقدير منخفض (D أو D+) بغرض التحسين. وعند إعادة المقرر الرسوب (F) تُحسب الدرجة الجديدة كاملة في المعدل التراكمي ويلغى أثر النقاط الصفرية السابقة. أما عند إعادة مقرر تم النجاح فيه بـ (D أو D+) فيكون الحد الأقصى للتقدير المحتسب هو (B أو B+ حسب لائحة القسم)، وتُستبدل النقاط القديمة بالجديدة مباشرة في حساب التراكمي.", "success_rate": 100, "success_label": "حق تنفيذي مضمون بنص اللائحة (100%)", "requirements": ["سداد رسوم الساعة المعتمدة للمقرر المعاد", "ألا يتجاوز عدد المقررات المعاد للتحسين 4 مقررات طوال الدراسة"], "petition_template": "السيد الأستاذ الدكتور / مرشد التسجيل ورئيس قسم شؤون الطلاب\nتحية طيبة وبعد،،،\n\nمقدمه لسيادتكم الطالب: {student_name}، كود الطالب: {student_id}.\n\nالموضوع: طلب إعادة تسجيل مقرر دراسي لغرض التحسين ورفع المعدل التراكمي.\n\nأرجو الموافقة على إدراج مقرر: {course_name} ({course_id}) ضمن استمارة تسجيلي لهذا الفصل الدراسي لإعادة دراسته وتحسين التقدير السابق الحاصل عليه وهو: ({old_grade}).\n\nوذلك تطبيقاً للمادة (28) من لائحة الساعات المعتمدة المنظمة لحق الطالب في تحسين المقررات ذات النقاط المنخفضة، ومستعد لسداد الرسوم المقررة.\n\nولكم وافر الاحترام والتقدير،،،\n\nمقدمه:\nالاسم: {student_name}\nالرقم الأكاديمي: {student_id}\nالتوقيع: ____________________"}]};
+
+        let COURSES = [
+            { course_id: "CS101", course_name: "مقدمة في البرمجة (Python & C++)", instructor: "د. أحمد محمد", room: "معمل الحاسب 1", credit_hours: 3 },
+            { course_id: "CS102", course_name: "هياكل البيانات والخوارزميات", instructor: "د. محمود حسن", room: "مدرج 2", credit_hours: 3 },
+            { course_id: "CS201", course_name: "البرمجة كائنية التوجه (OOP & Design Patterns)", instructor: "د. يوسف شريف", room: "معمل 2", credit_hours: 3 },
+            { course_id: "CS202", course_name: "تنظيم وعمارة الحاسب", instructor: "د. عماد كامل", room: "مدرج 3", credit_hours: 3 },
+            { course_id: "CS301", course_name: "نظم التشغيل والبرمجة المتزامنة", instructor: "د. منى سعيد", room: "معمل 4", credit_hours: 3 },
+            { course_id: "CS302", course_name: "شبكات الحاسب وأمن الشبكات", instructor: "د. هاني مصطفى", room: "معمل الشبكات", credit_hours: 3 },
+            { course_id: "CS303", course_name: "هندسة البرمجيات وإدارة المشاريع", instructor: "د. نادية إبراهيم", room: "قاعة 204", credit_hours: 2 },
+            { course_id: "CS401", course_name: "تطوير تطبيقات الويب المتكاملة (Full-Stack)", instructor: "د. هشام زكي", room: "معمل الويب", credit_hours: 3 },
+            { course_id: "CS402", course_name: "أمن المعلومات واختبار الاختراق", instructor: "د. شريف عادل", room: "معمل الأمان", credit_hours: 3 },
+            { course_id: "CS403", course_name: "الحوسبة السحابية وDevOps", instructor: "د. باسل محمود", room: "معمل السحابية", credit_hours: 3 },
+            { course_id: "MATH101", course_name: "تفاضل وتكامل 1", instructor: "د. إبراهيم علي", room: "مدرج 1", credit_hours: 3 },
+            { course_id: "MATH102", course_name: "جبر خطي وإحصاء احتمالي", instructor: "د. سارة خالد", room: "قاعة 104", credit_hours: 3 },
+            { course_id: "MATH201", course_name: "رياضيات متقطعة ونظرية المخططات", instructor: "د. ليلى نبيل", room: "قاعة 105", credit_hours: 2 },
+            { course_id: "IS201", course_name: "نظم قواعد البيانات وتصميمها", instructor: "د. منى رضا", room: "معمل 3", credit_hours: 3 },
+            { course_id: "IS301", course_name: "مستودعات البيانات وتنظيم ETL", instructor: "د. تامر فاروق", room: "معمل 2", credit_hours: 2 },
+            { course_id: "AI201", course_name: "أساسيات الذكاء الاصطناعي ونظم المعرفة", instructor: "د. علي عبدالله", room: "قاعة 201", credit_hours: 3 },
+            { course_id: "AI202", course_name: "تعلم الآلة (Machine Learning)", instructor: "د. كريم وليد", room: "معمل الذكاء الاصطناعي", credit_hours: 3 },
+            { course_id: "AI301", course_name: "التعلم العميق ورؤية الحاسب (Deep Learning)", instructor: "د. ياسمين طارق", room: "معمل الأبحاث", credit_hours: 3 },
+            { course_id: "AI302", course_name: "معالجة اللغات الطبيعية (NLP & LLMs)", instructor: "د. رامي إلهامي", room: "معمل 1", credit_hours: 2 },
+            { course_id: "ROB201", course_name: "مقدمة في الروبوتات والأنظمة المدمجة", instructor: "د. طارق أحمد", room: "معمل الروبوت", credit_hours: 2 },
+            { course_id: "ROB301", course_name: "نظم الزمن الحقيقي وإنترنت الأشياء (RTOS & IoT)", instructor: "د. وليد فوزي", room: "معمل المدمجة", credit_hours: 2 }
+        ];
+
+        let PREREQS = {
+    "CS101": [],
+    "MATH101": [],
+    "MATH201": [
+        "MATH101"
+    ],
+    "CS102": [
+        "CS101"
+    ],
+    "CS201": [
+        "CS101"
+    ],
+    "CS202": [
+        "CS101"
+    ],
+    "MATH102": [
+        "MATH101"
+    ],
+    "IS201": [
+        "CS101"
+    ],
+    "IS301": [
+        "IS201"
+    ],
+    "AI201": [
+        "CS101",
+        "MATH101"
+    ],
+    "AI202": [
+        "AI201",
+        "MATH102"
+    ],
+    "AI301": [
+        "AI202"
+    ],
+    "AI302": [
+        "AI202"
+    ],
+    "ROB201": [
+        "CS101",
+        "CS202"
+    ],
+    "ROB301": [
+        "ROB201",
+        "CS301"
+    ],
+    "CS301": [
+        "CS102",
+        "CS202"
+    ],
+    "CS302": [
+        "CS301"
+    ],
+    "CS303": [
+        "CS201"
+    ],
+    "CS401": [
+        "CS201",
+        "IS201"
+    ],
+    "CS402": [
+        "CS302",
+        "CS301"
+    ],
+    "CS403": [
+        "CS301",
+        "CS302"
+    ]
+};
+
+        const DOCS = {
+            attendance: `لائحة الحضور والغياب - كلية الذكاء الاصطناعي والحاسبات
+
+المادة الأولى: الحضور الإلزامي
+يُعدّ حضور المحاضرات والأعمال العملية والميدانية إلزامياً لجميع طلاب الكلية.
+يجب على الطالب حضور ما لا يقل عن 75% من إجمالي المحاضرات المقررة لكل مادة في الفصل الدراسي.
+
+المادة الثانية: الحد الأقصى للغياب
+الحد الأقصى المسموح به للغياب هو 25% من إجمالي ساعات المادة.
+يُحتسب الغياب بعذر وبدون عذر ضمن نسبة الغياب الإجمالية حتى يتم البت فيه من لجنة شؤون الطلاب.
+في حالة تجاوز نسبة الغياب 10% وحتى 20%: يُرسل للطالب إنذار أكاديمي أول عبر البوابة الإلكترونية.
+
+المادة الثالثة: الحرمان من دخول الامتحان النهائي (الرسوب بالغياب)
+إذا تجاوز الطالب نسبة الغياب المقررة (25%) في أي مادة دون عذر قهري معتمد، يُحرَم رسمياً من دخول الامتحان النهائي لتلك المادة.
+تُرصد للطالب درجة صفر في خانة الامتحان النهائي مع تسجيل تقدير (DN - حرمان).
+يحق للطالب تقديم التماس تظلم رسمي إلى وكيل الكلية لشؤون التعليم والطلاب خلال أسبوع واحد من إعلان كشوف الحرمان.
+
+المادة الرابعة: حالات الغياب بعذر مقبول
+تُقبل الأعذار في الحالات الاستثنائية التالية فقط:
+1. التنويم في المستشفى أو إجراء عمليات جراحية عاجلة مع تقديم تقرير طبي معتمد من الإدارة الطبية بالجامعة.
+2. حالات الوفاة للأقارب من الدرجة الأولى (الأب، الأم، الأخ، الأخت) مع إرفاق شهادة الوفاة.
+3. تمثيل الكلية أو الجامعة في البطولات والمؤتمرات والمسابقات الرسمية بخطاب تكليف مسبق من رعاية الشباب.
+4. الظروف القاهرة غير المتوقعة التي يقرر مجلس الكلية قبولها.`,
+
+            gpa: `نظام التقديرات وحساب المعدل التراكمي (CGPA) - نظام الساعات المعتمدة
+
+أولاً: جدول توزيع التقديرات والنقاط
+الدرجة المئوية    التقدير اللاتيني    النقاط (Grade Points)    التقدير المكافئ
+------------------------------------------------------------------------
+90% فأكثر         A+                 4.0                      ممتاز مرتفع
+85% إلى أقل من 90% A                  3.7                      ممتاز
+80% إلى أقل من 85% B+                 3.3                      جيد جداً مرتفع
+75% إلى أقل من 80% B                  3.0                      جيد جداً
+70% إلى أقل من 75% C+                 2.7                      جيد مرتفع
+65% إلى أقل من 70% C                  2.3                      جيد
+60% إلى أقل من 65% D+                 2.0                      مقبول مرتفع
+55% إلى أقل من 60% D                  1.7                      مقبول (الحد الأدنى للنجاح)
+أقل من 55%        F                  0.0                      راسب
+
+ثانياً: شروط النجاح الأكاديمي
+الحد الأدنى للنجاح في أي مقرر دراسي هو الحصول على تقدير (D) بنسبة 55% من إجمالي الدرجة النهائية.
+المقرر الحاصل فيه الطالب على تقدير (F) لا تُحتسب ساعاته المعتمدة ضمن الساعات المنجزة، ويجب على الطالب إعادة دراسته والتسجيل فيه مرة أخرى.
+
+ثالثاً: معادلة حساب المعدل التراكمي (GPA)
+المعدل = مجموع (نقاط كل مقرر × عدد ساعاته المعتمدة) ÷ مجموع الساعات المعتمدة الإجمالي
+المعدل التراكمي العام المطلوب للتخرج هو 2.0 على الأقل من 4.0.
+
+رابعاً: التحذير الأكاديمي ولوائح الفصل
+1. يوضع الطالب تحت الملاحظة الأكاديمية (Academic Probation) إذا انخفض معدله التراكمي عن 2.0 في أي فصل دراسي.
+2. الطالب المنذر أكاديمياً يُمنع من تسجيل أكثر من 12 ساعة معتمدة في الفصل التالي للتركيز على رفع معدله.
+3. إذا استمر الطالب تحت الملاحظة لثلاثة فصول دراسية متتالية يُعرض موقفه على مجلس الكلية للنظر في فصله أكاديمياً أو منحه فرصة أخيرة.
+
+خامساً: مرتبة الشرف والتفوق
+تُمنح مرتبة الشرف للطالب الذي يتخرج بمعدل تراكمي 3.5 فأكثر بشرط ألا يكون قد رسب في أي مقرر دراسي طوال سنوات دراسته بالكلية.`,
+
+            registration: `قواعد التسجيل والإرشاد الأكاديمي - كلية الحاسبات والذكاء الاصطناعي
+
+أولاً: العبء الدراسي (الحد الأدنى والأقصى للساعات المعتمدة)
+1. الحد الأدنى للتسجيل في الفصل الدراسي الاعتيادي: 12 ساعة معتمدة.
+2. الحد الأقصى للعبء الدراسي للطالب العادي (معدل 2.0 إلى 3.49): 18 ساعة معتمدة.
+3. استثناء التفوق (معدل 3.5 فأكثر): يُسمح للطالب بتسجيل حتى 21 ساعة معتمدة بعد موافقة المرشد الأكاديمي والعميد.
+4. الطلاب المنذرون أكاديمياً (معدل أقل من 2.0): الحد الأقصى المسموح به هو 12 ساعة معتمدة فقط.
+5. الفصل الصيفي (Summer Semester): الحد الأقصى للتسجيل هو 6 ساعات معتمدة (أو 7 ساعات إذا كانت تشمل مقرر تدريب أو تخرج).
+
+ثانياً: المتطلبات السابقة للمقررات (Prerequisites)
+لا يجوز للطالب بأي حال من الأحوال التسجيل في مقرر دراسي ما لم يكن قد اجتاز المتطلب السابق (Prerequisite) بنجاح (تقدير D على الأقل).
+يُلغى تسجيل أي مقرر يتم بشكل خاطئ دون استيفاء متطلبه السابق فور مراجعة الجداول وقبل بدء الأسبوع الثالث.
+
+ثالثاً: مهام المرشد الأكاديمي
+1. يُخصص لكل طالب مرشد أكاديمي من أعضاء هيئة التدريس لمساعدته في بناء خطته الدراسية واختيار المقررات المناسبة.
+2. لا يُعتمد الجدول الدراسي للطالب إلا بعد الحصول على الموافقة الإلكترونية من المرشد الأكاديمي.
+3. يتولى المرشد متابعة الطلاب المتعثرين وتقديم الدعم الإرشادي المناسب لتحسين معدلاتهم.
+
+رابعاً: فترات الحذف والإضافة والانسحاب (Add & Drop)
+1. فترة الحذف والإضافة: خلال الأسبوعين الأول والثاني من بدء الفصل الدراسي، ولا يُثبت المقرر في السجل عند حذفه خلال هذه الفترة.
+2. الانسحاب بعذر (Withdrawal - W): يجوز للطالب الانسحاب من مقرر حتى نهاية الأسبوع الثامن، وتُسجل له علامة (W) ولا تدخل في حساب المعدل.
+3. الانسحاب الإجباري/الرسوب (WF): الانسحاب بعد الأسبوع الثامن يُعد رسوباً بالانسحاب (WF) ويُحسب كتقدير F بنقاط صفرية في المعدل.`,
+
+            exams: `قواعد وضوابط الامتحانات النهائية والأعذار الطبية
+
+1. يُشترط لدخول الامتحان النهائي سداد الرسوم الدراسية وألا يكون الطالب محروماً بسبب الغياب (DN).
+2. لا يُسمح بدخول قاعة الامتحان بعد مرور 15 دقيقة من بدء الوقت المحدد.
+3. يُمنع منعاً باتاً إدخال الهواتف المحمولة أو الساعات الذكية أو المذكرات داخل لجان الامتحانات.
+4. الأعذار الطبية لغياب الامتحان النهائي: يجب إخطار إدارة شؤون الطلاب وتقديم تقرير الإدارة الطبية خلال 48 ساعة كحد أقصى من موعد الامتحان للنظر في عقد امتحان تكميلي أو إعادة القيد.`
+        };
+
+        // ==========================================
+        // 2. Navigation Tabs Logic
+        // ==========================================
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+            const targetPane = document.getElementById(`tab-${tabId}`);
+            if (targetPane) targetPane.classList.add('active');
+
+            const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+
+        
+        // ==========================================
+        // 3. Catalog Render & Hour Categorization (3 Hours vs 2 Hours)
+        // ==========================================
+        let currentHoursFilter = 'all';
+
+        function setCourseHoursFilter(filter) {
+            currentHoursFilter = filter;
+            document.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
+            if (filter === 'all') document.getElementById('btnFilterAll')?.classList.add('active');
+            if (filter === '3') document.getElementById('btnFilter3')?.classList.add('active');
+            if (filter === '2') document.getElementById('btnFilter2')?.classList.add('active');
+            filterCourses();
+        }
+
+        function buildCourseTableHtml(courseList, groupTitle, hoursVal, themeColor, badgeClass) {
+            if (courseList.length === 0) return '';
+            
+            const totalHours = courseList.reduce((acc, c) => acc + (parseInt(c.credit_hours) || hoursVal), 0);
+            let rowsHtml = '';
+
+            courseList.forEach(c => {
+                const reqs = PREREQS[c.course_id] || [];
+                const reqHtml = reqs.length > 0 
+                    ? reqs.map(r => `<span class="badge badge-warning" style="margin-left: 4px;">${r}</span>`).join('') 
+                    : '<span style="color: var(--text-muted); font-size: 0.85rem;">بدون متطلب</span>';
+
+                const hoursBadge = hoursVal === 3 
+                    ? `<span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); font-weight: 700;"><i class="fa-solid fa-clock"></i> 3 ساعات</span>`
+                    : `<span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); font-weight: 700;"><i class="fa-solid fa-stopwatch"></i> ساعتان</span>`;
+
+                rowsHtml += `
+                    <tr>
+                        <td><span class="badge badge-code">${c.course_id}</span></td>
+                        <td style="font-weight: 700;">${c.course_name}</td>
+                        <td style="color: var(--accent-secondary);"><i class="fa-solid fa-chalkboard-user"></i> ${c.instructor}</td>
+                        <td><span style="color: #cbd5e1;"><i class="fa-solid fa-location-dot"></i> ${c.room}</span></td>
+                        <td>${hoursBadge}</td>
+                        <td>${reqHtml}</td>
+                    </tr>
+                `;
+            });
+
+            return `
+                <div class="course-group-card">
+                    <div class="course-group-header" style="background: rgba(${themeColor}, 0.1); border-bottom: 1px solid rgba(${themeColor}, 0.25);">
+                        <h3 style="font-size: 1.05rem; color: ${themeColor === '56, 189, 248' ? '#38bdf8' : '#c084fc'}; display: flex; align-items: center; gap: 8px; margin: 0;">
+                            <i class="${hoursVal === 3 ? 'fa-solid fa-clock' : 'fa-solid fa-stopwatch'}"></i>
+                            <span>${groupTitle}</span>
+                        </h3>
+                        <span class="badge ${badgeClass}" style="font-size: 0.85rem;">
+                            ${courseList.length} مقررات | ${totalHours} ساعة معتمدة
+                        </span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="custom-table" style="margin-top: 0; border-top: none;">
+                            <thead>
+                                <tr>
+                                    <th>الرمز</th>
+                                    <th>اسم المقرر</th>
+                                    <th>المحاضر</th>
+                                    <th>المكان</th>
+                                    <th>الساعات</th>
+                                    <th>المتطلبات السابقة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${rowsHtml}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCourses(list) {
+            const container = document.getElementById('coursesCatalogContainer');
+            if (!container) return;
+
+            // Separate courses into 3 hours and 2 hours, sorted in order
+            const courses3h = list.filter(c => parseInt(c.credit_hours) === 3).sort((a, b) => a.course_id.localeCompare(b.course_id));
+            const courses2h = list.filter(c => parseInt(c.credit_hours) === 2).sort((a, b) => a.course_id.localeCompare(b.course_id));
+            const coursesOther = list.filter(c => parseInt(c.credit_hours) !== 2 && parseInt(c.credit_hours) !== 3).sort((a, b) => a.course_id.localeCompare(b.course_id));
+
+            // Update Counts
+            const total3 = COURSES.filter(c => parseInt(c.credit_hours) === 3).length;
+            const total2 = COURSES.filter(c => parseInt(c.credit_hours) === 2).length;
+            if (document.getElementById('countAllCourses')) document.getElementById('countAllCourses').textContent = COURSES.length;
+            if (document.getElementById('count3hCourses')) document.getElementById('count3hCourses').textContent = total3;
+            if (document.getElementById('count2hCourses')) document.getElementById('count2hCourses').textContent = total2;
+            if (document.getElementById('catalogBadge')) document.getElementById('catalogBadge').textContent = `${list.length} مادة معروضة`;
+            if (document.getElementById('statCoursesCount')) document.getElementById('statCoursesCount').textContent = COURSES.length;
+
+            let html = '';
+
+            if (currentHoursFilter === 'all' || currentHoursFilter === '3') {
+                if (courses3h.length > 0) {
+                    html += buildCourseTableHtml(courses3h, "🕒 أولاً: مقررات 3 ساعات معتمدة (مرتبة بالترتيب)", 3, "56, 189, 248", "badge-info");
+                }
+            }
+
+            if (currentHoursFilter === 'all' || currentHoursFilter === '2') {
+                if (courses2h.length > 0) {
+                    html += buildCourseTableHtml(courses2h, "🕑 ثانياً: مقررات ساعتان معتمدتان (مرتبة بالترتيب)", 2, "168, 85, 247", "badge-warning");
+                }
+            }
+
+            if (coursesOther.length > 0 && currentHoursFilter === 'all') {
+                html += buildCourseTableHtml(coursesOther, "📚 مقررات أخرى معتمدة", 3, "99, 102, 241", "badge-code");
+            }
+
+            if (!html) {
+                html = `
+                    <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+                        <i class="fa-solid fa-folder-open" style="font-size: 2.5rem; margin-bottom: 12px; color: var(--border-color);"></i>
+                        <p>لا توجد مقررات تطابق البحث والتصفية المحددة.</p>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function filterCourses() {
+            const query = (document.getElementById('courseSearchInput')?.value || '').toLowerCase().trim();
+            let baseList = COURSES;
+            
+            if (currentHoursFilter === '3') {
+                baseList = COURSES.filter(c => parseInt(c.credit_hours) === 3);
+            } else if (currentHoursFilter === '2') {
+                baseList = COURSES.filter(c => parseInt(c.credit_hours) === 2);
+            }
+
+            if (!query) {
+                renderCourses(baseList);
+                return;
+            }
+
+            const filtered = baseList.filter(c => 
+                c.course_id.toLowerCase().includes(query) ||
+                c.course_name.toLowerCase().includes(query) ||
+                (c.instructor && c.instructor.toLowerCase().includes(query)) ||
+                (c.room && c.room.toLowerCase().includes(query))
+            );
+            renderCourses(filtered);
+        }
+
+        // ==========================================
+        // Developer Team & LinkedIn Integration
+        // ==========================================
+        const DEFAULT_DEV_TEAM = [
+            {
+                id: 1,
+                name: "سامي محمد كاسب",
+                name_en: "Sami Mohamed Kassap",
+                student_id: "25181309",
+                role: "قائد المشروع ومطور استرجاع المعلومات (Project Lead & IR Engineer)",
+                badge: "Team Leader & Architect",
+                badge_color: "#38bdf8",
+                avatar_icon: "fa-crown",
+                description: "المسؤول عن القيادة التقنية وتصميم وتطوير خوارزمية الفهرس المعكوس (Inverted Index) ونظام استرجاع المعلومات (TF-IDF & Cosine Similarity) وهندسة الملفات.",
+                linkedin: "https://www.linkedin.com/in/samy-kassap-25181309",
+                skills: ["Information Retrieval", "TF-IDF Engine", "Python / Flask", "System Architecture"]
+            },
+            {
+                id: 2,
+                name: "مطور واجهات المستخدم والتفاعل",
+                name_en: "Frontend & UI/UX Developer",
+                student_id: "25181310",
+                role: "مهندس واجهات الويب وتجربة الاستخدام (UI/UX & Frontend Engineer)",
+                badge: "Frontend Lead",
+                badge_color: "#10b981",
+                avatar_icon: "fa-palette",
+                description: "المسؤول عن بناء الواجهات التفاعلية الكاملة بدعم متكامل للغة العربية وتجربة المستخدم الحديثة (Dashboard & Interactive Tools).",
+                linkedin: "https://www.linkedin.com",
+                skills: ["Modern UI/UX", "JavaScript ES6+", "Responsive Design", "Data Visualization"]
+            },
+            {
+                id: 3,
+                name: "مهندس تمثيل المعرفة وقواعد البيانات",
+                name_en: "Knowledge Base & Data Engineer",
+                student_id: "25181311",
+                role: "هندسة البيانات وقواعد اللوائح والأنظمة (Data & Knowledge Base Specialist)",
+                badge: "Knowledge Engineer",
+                badge_color: "#f59e0b",
+                avatar_icon: "fa-database",
+                description: "المسؤول عن هيكلة بنك لوائح الكلية وقواعد الساعات المعتمدة، وسجل الاستعلامات (queries.log)، ومعالجة مجموعات البيانات CSV وJSON.",
+                linkedin: "https://www.linkedin.com",
+                skills: ["Knowledge Representation", "Data Modeling", "Bylaw Processing", "ETL & File Handling"]
+            },
+            {
+                id: 4,
+                name: "مهندس الاستنتاج الأكاديمي والذكاء الاصطناعي",
+                name_en: "Inference & AI Advisor Engineer",
+                student_id: "25181312",
+                role: "تطوير محرك الاستنتاج الأكاديمي والمسارات (Inference & Decision Logic)",
+                badge: "AI Decision Engineer",
+                badge_color: "#a855f7",
+                avatar_icon: "fa-brain",
+                description: "المسؤول عن شجرة المتطلبات السابقة للمقررات (Prerequisites DAG)، ومحرك فحص الأهلية والتوصيات المهنية وسد الفجوات المهارية.",
+                linkedin: "https://www.linkedin.com",
+                skills: ["Inference Engines", "Graph Prereq DAG", "Career Matching", "Algorithm Design"]
+            }
+        ];
+
+        function getDevTeamData() {
+            try {
+                const stored = localStorage.getItem('smart_student_dev_team');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch(e) {}
+            return DEFAULT_DEV_TEAM;
+        }
+
+        function renderDevTeam() {
+            const grid = document.getElementById('devTeamGrid');
+            const editorList = document.getElementById('devTeamEditorList');
+            if (!grid) return;
+
+            const devs = getDevTeamData();
+            grid.innerHTML = '';
+            if (editorList) editorList.innerHTML = '';
+
+            devs.forEach((dev, idx) => {
+                // 1. Render Dev Card
+                const card = document.createElement('div');
+                card.className = 'dev-card';
+                
+                const skillsHtml = (dev.skills || []).map(s => `<span class="dev-skill-pill">${s}</span>`).join('');
+                const linkedinUrl = dev.linkedin && dev.linkedin.trim() ? dev.linkedin.trim() : 'https://www.linkedin.com';
+
+                card.innerHTML = `
+                    <div class="dev-avatar">
+                        <i class="fa-solid ${dev.avatar_icon || 'fa-user-tie'}"></i>
+                    </div>
+                    <div class="dev-name">${dev.name}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); direction: ltr;">${dev.name_en || ''}</div>
+                    <div class="dev-role">${dev.role}</div>
+                    <div class="dev-id-badge"><i class="fa-solid fa-id-card"></i> كود الطالب: ${dev.student_id || '---'}</div>
+                    <div class="dev-desc">${dev.description}</div>
+                    <div class="dev-skills-pills">${skillsHtml}</div>
+                    <div class="dev-linkedin-box">
+                        <a href="${linkedinUrl}" target="_blank" rel="noopener noreferrer" class="linkedin-btn" title="الملف الشخصي على LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>حساب LinkedIn</span>
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+
+                // 2. Render Editor item
+                if (editorList) {
+                    const editRow = document.createElement('div');
+                    editRow.style.cssText = "display: grid; grid-template-columns: 180px 140px 1fr; gap: 10px; align-items: center; background: rgba(30, 41, 59, 0.4); padding: 10px 14px; border-radius: 8px;";
+                    editRow.innerHTML = `
+                        <input type="text" class="input-control" id="edit-dev-name-${idx}" value="${dev.name}" placeholder="الاسم" style="font-size: 0.85rem;">
+                        <input type="text" class="input-control" id="edit-dev-id-${idx}" value="${dev.student_id || ''}" placeholder="كود الطالب" style="font-size: 0.85rem; text-align: center;">
+                        <input type="url" class="input-control" id="edit-dev-li-${idx}" value="${dev.linkedin || ''}" placeholder="رابط LinkedIn: https://www.linkedin.com/in/..." style="font-size: 0.85rem; direction: ltr;">
+                    `;
+                    editorList.appendChild(editRow);
+                }
+            });
+        }
+
+        function saveDevTeamChanges() {
+            const devs = getDevTeamData();
+            devs.forEach((dev, idx) => {
+                const nameEl = document.getElementById(`edit-dev-name-${idx}`);
+                const idEl = document.getElementById(`edit-dev-id-${idx}`);
+                const liEl = document.getElementById(`edit-dev-li-${idx}`);
+                if (nameEl) dev.name = nameEl.value.trim() || dev.name;
+                if (idEl) dev.student_id = idEl.value.trim() || dev.student_id;
+                if (liEl) dev.linkedin = liEl.value.trim() || dev.linkedin;
+            });
+            localStorage.setItem('smart_student_dev_team', JSON.stringify(devs));
+            renderDevTeam();
+            alert('تم حفظ بيانات فريق المطورين وروابط LinkedIn بنجاح!');
+        }
+
+        function resetDevTeamToDefault() {
+            if (confirm('هل ترغب حقاً في استعادة بيانات فريق المطورين الافتراضية؟')) {
+                localStorage.removeItem('smart_student_dev_team');
+                renderDevTeam();
+            }
+        }
+    
+        // ==========================================
+        // 4. Smart Advisor (Inference Engine)
+        // ==========================================
+        function initAdvisor() {
+            const grid = document.getElementById('advisorChecklist');
+            grid.innerHTML = '';
+
+            COURSES.forEach(c => {
+                const label = document.createElement('label');
+                label.className = 'check-card';
+                label.id = `card-${c.course_id}`;
+                label.innerHTML = `
+                    <input type="checkbox" value="${c.course_id}" onchange="updateAdvisor()">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.95rem;">${c.course_id}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">${c.course_name}</div>
+                    </div>
+                `;
+                grid.appendChild(label);
+            });
+            updateAdvisor();
+        }
+
+        function updateAdvisor() {
+            const checkedBoxes = Array.from(document.querySelectorAll('#advisorChecklist input[type="checkbox"]:checked'));
+            const passedCodes = new Set(checkedBoxes.map(b => b.value.toUpperCase()));
+
+            // Update card active classes
+            document.querySelectorAll('.check-card').forEach(card => {
+                const cid = card.querySelector('input').value;
+                if (passedCodes.has(cid)) {
+                    card.classList.add('checked');
+                } else {
+                    card.classList.remove('checked');
+                }
+            });
+
+            // Calculate completed hours
+            let passedHours = 0;
+            COURSES.forEach(c => {
+                if (passedCodes.has(c.course_id)) passedHours += parseInt(c.credit_hours || 3);
+            });
+
+            const available = [];
+            const locked = [];
+
+            COURSES.forEach(c => {
+                const cid = c.course_id;
+                if (passedCodes.has(cid)) return; // already completed
+
+                const reqs = PREREQS[cid] || [];
+                const missing = reqs.filter(r => !passedCodes.has(r));
+
+                if (missing.length === 0) {
+                    available.push(c);
+                } else {
+                    locked.push({ ...c, missing });
+                }
+            });
+
+            // Render Summary
+            document.getElementById('advisorSummaryText').textContent = 
+                `المواد المجتازة: ${passedCodes.size} مواد | الساعات المنجزة: ${passedHours} ساعة معتمدة`;
+            document.getElementById('advisorEligibleCount').textContent = `${available.length} متاح`;
+
+            // Render Available
+            const availDiv = document.getElementById('availableCoursesList');
+            availDiv.innerHTML = '';
+            if (available.length === 0) {
+                availDiv.innerHTML = '<div style="color: var(--text-muted); font-size: 0.95rem;">لا توجد مواد جديدة متاحة للتسجيل حالياً.</div>';
+            } else {
+                available.forEach(c => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.style.padding = '16px';
+                    card.style.marginBottom = '0';
+                    card.style.border = '1.5px solid rgba(16, 185, 129, 0.35)';
+                    card.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span class="badge badge-code">${c.course_id}</span>
+                            <span class="badge badge-success"><i class="fa-solid fa-check"></i> جاهز للتسجيل</span>
+                        </div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 6px;">${c.course_name}</h4>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <span><i class="fa-solid fa-user"></i> ${c.instructor}</span> • 
+                            <span><i class="fa-solid fa-clock"></i> ${c.credit_hours} ساعات</span>
+                        </div>
+                    `;
+                    availDiv.appendChild(card);
+                });
+            }
+
+            // Render Locked
+            const lockedDiv = document.getElementById('lockedCoursesList');
+            lockedDiv.innerHTML = '';
+            if (locked.length === 0) {
+                lockedDiv.innerHTML = '<div style="color: var(--accent-success); font-size: 0.95rem;">تهانينا! لا توجد مقررات مقفلة.</div>';
+            } else {
+                locked.forEach(c => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.style.padding = '16px';
+                    card.style.marginBottom = '0';
+                    card.style.border = '1.5px solid rgba(245, 158, 11, 0.3)';
+                    card.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span class="badge badge-code">${c.course_id}</span>
+                            <span class="badge badge-warning"><i class="fa-solid fa-lock"></i> مقفل</span>
+                        </div>
+                        <h4 style="font-size: 1.05rem; margin-bottom: 6px;">${c.course_name}</h4>
+                        <div style="font-size: 0.85rem; color: var(--accent-danger); font-weight: 600;">
+                            ينقصك اجتياز: ${c.missing.map(m => `<span class="badge badge-danger">${m}</span>`).join(' ')}
+                        </div>
+                    `;
+                    lockedDiv.appendChild(card);
+                });
+            }
+
+            // Sync automatically with Career Orchestrator Engine
+            if (typeof updateCareerAnalysis === 'function') {
+                updateCareerAnalysis();
+            }
+        }
+
+        function resetAdvisor() {
+            document.querySelectorAll('#advisorChecklist input[type="checkbox"]').forEach(c => c.checked = false);
+            updateAdvisor();
+        }
+
+        // ==========================================
+        // 5. Client-Side TF-IDF & Cosine Similarity
+        // ==========================================
+        function tokenize(text) {
+            return text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()؟،]/g, " ")
+                       .toLowerCase()
+                       .split(/\s+/)
+                       .filter(w => w.length > 2);
+        }
+
+        function executeIRSearch() {
+            const query = document.getElementById('irQueryInput').value.trim();
+            if (!query) return;
+
+            const qTokens = tokenize(query);
+            if (qTokens.length === 0) return;
+
+            const docKeys = Object.keys(DOCS);
+            const N = docKeys.length;
+
+            // Inverted index
+            const docTermFreq = {};
+            const docLengths = {};
+            const df = {};
+
+            docKeys.forEach(k => {
+                const tokens = tokenize(DOCS[k]);
+                const tf = {};
+                tokens.forEach(t => {
+                    tf[t] = (tf[t] || 0) + 1;
+                });
+                docTermFreq[k] = tf;
+
+                Object.keys(tf).forEach(term => {
+                    df[term] = (df[term] || 0) + 1;
+                });
+            });
+
+            // Calculate TF-IDF vectors
+            const docVectors = {};
+            docKeys.forEach(k => {
+                const vec = {};
+                let sumSq = 0;
+                Object.keys(docTermFreq[k]).forEach(term => {
+                    const idf = Math.log(1 + N / (df[term] || 1));
+                    const score = (docTermFreq[k][term]) * idf;
+                    vec[term] = score;
+                    sumSq += score * score;
+                });
+                docVectors[k] = { vec, norm: Math.sqrt(sumSq) || 1 };
+            });
+
+            // Query Vector
+            const qVec = {};
+            let qSumSq = 0;
+            qTokens.forEach(t => {
+                const idf = Math.log(1 + N / (df[t] || 1));
+                qVec[t] = (qVec[t] || 0) + idf;
+            });
+            Object.values(qVec).forEach(val => qSumSq += val * val);
+            const qNorm = Math.sqrt(qSumSq) || 1;
+
+            // Compute Cosine Similarity
+            const results = [];
+            docKeys.forEach(k => {
+                const { vec, norm } = docVectors[k];
+                let dot = 0;
+                Object.keys(qVec).forEach(term => {
+                    if (vec[term]) dot += qVec[term] * vec[term];
+                });
+                const sim = dot / (qNorm * norm);
+                if (sim > 0.02) {
+                    const docText = DOCS[k];
+                    const paragraphs = docText.split('\n\n').filter(p => p.trim());
+                    // Find snippet that mentions any query token
+                    let bestP = paragraphs[0];
+                    for (const p of paragraphs) {
+                        if (qTokens.some(qt => p.includes(qt))) {
+                            bestP = p;
+                            break;
+                        }
+                    }
+                    results.push({
+                        key: k,
+                        name: getDocTitle(k),
+                        score: Math.min(Math.round(sim * 100), 99),
+                        snippet: bestP.trim().substring(0, 320)
+                    });
+                }
+            });
+
+            results.sort((a, b) => b.score - a.score);
+            renderIRResults(results, query);
+        }
+
+        function getDocTitle(k) {
+            switch(k) {
+                case 'attendance': return 'لائحة الحضور والغياب والحرمان';
+                case 'gpa': return 'نظام التقديرات وحساب المعدل التراكمي';
+                case 'registration': return 'قواعد التسجيل والإرشاد الأكاديمي';
+                case 'exams': return 'لوائح الامتحانات النهائية والأعذار';
+                default: return k;
+            }
+        }
+
+        function renderIRResults(results, query) {
+            const container = document.getElementById('irResultsContainer');
+            container.innerHTML = '';
+
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 30px; color: var(--text-muted);">
+                        <i class="fa-regular fa-face-frown" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                        <p>لم يتم العثور على تطابق مع استفسارك. جرب كلمات مفتاحية مثل: غياب، معدل، تسجيل، مرتبة الشرف.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            results.forEach((r, idx) => {
+                const item = document.createElement('div');
+                item.className = 'ir-result';
+                item.innerHTML = `
+                    <div class="ir-header">
+                        <div class="ir-title">
+                            <span class="badge badge-code">#${idx+1}</span>
+                            <i class="fa-solid fa-file-lines" style="color: var(--accent-secondary);"></i>
+                            <span>${r.name}</span>
+                        </div>
+                        <div class="score-bar-container">
+                            <div class="score-bar"><div class="score-fill" style="width: ${r.score}%;"></div></div>
+                            <span class="badge badge-success">${r.score}% تشابه</span>
+                        </div>
+                    </div>
+                    <p class="ir-snippet">${r.snippet}...</p>
+                    <div style="margin-top: 10px;">
+                        <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.8rem;" onclick="loadDoc('${r.key}'); switchTab('docs');">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> قراءة اللائحة كاملة
+                        </button>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function quickSearch(phrase) {
+            document.getElementById('irQueryInput').value = phrase;
+            executeIRSearch();
+        }
+
+        // ==========================================
+        // 6. Docs Viewer
+        // ==========================================
+        function loadDoc(key) {
+            document.querySelectorAll('.doc-tab').forEach(b => b.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.doc-tab')).find(b => b.getAttribute('onclick').includes(key));
+            if (activeBtn) activeBtn.classList.add('active');
+
+            const viewer = document.getElementById('docViewerContent');
+            viewer.textContent = DOCS[key] || "المستند غير متوفر.";
+        }
+
+        // ==========================================
+        // 7. GPA Calculator
+        // ==========================================
+        const GRADE_POINTS = {
+            "A+": 4.0, "A": 3.7, "B+": 3.3, "B": 3.0,
+            "C+": 2.7, "C": 2.3, "D+": 2.0, "D": 1.7, "F": 0.0
+        };
+
+        function addGpaRow(name = "", grade = "A", hours = 3) {
+            const container = document.getElementById('gpaRowsContainer');
+            const row = document.createElement('div');
+            row.className = 'gpa-row';
+            row.innerHTML = `
+                <input type="text" class="input-control gpa-name" placeholder="اسم المادة (مثال: البرمجة الهيكلية)" value="${name}">
+                <select class="input-control gpa-grade">
+                    <option value="A+" ${grade==='A+'?'selected':''}>A+ (4.0)</option>
+                    <option value="A" ${grade==='A'?'selected':''}>A (3.7)</option>
+                    <option value="B+" ${grade==='B+'?'selected':''}>B+ (3.3)</option>
+                    <option value="B" ${grade==='B'?'selected':''}>B (3.0)</option>
+                    <option value="C+" ${grade==='C+'?'selected':''}>C+ (2.7)</option>
+                    <option value="C" ${grade==='C'?'selected':''}>C (2.3)</option>
+                    <option value="D+" ${grade==='D+'?'selected':''}>D+ (2.0)</option>
+                    <option value="D" ${grade==='D'?'selected':''}>D (1.7)</option>
+                    <option value="F" ${grade==='F'?'selected':''}>F (0.0)</option>
+                </select>
+                <input type="number" class="input-control gpa-hours" placeholder="الساعات" value="${hours}" min="1" max="6">
+                <button class="btn btn-danger" style="padding: 10px;" onclick="this.parentElement.remove(); calculateGPA();">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            `;
+            container.appendChild(row);
+        }
+
+        function calculateGPA() {
+            const rows = document.querySelectorAll('.gpa-row');
+            let totalPoints = 0;
+            let totalHours = 0;
+
+            rows.forEach(r => {
+                const grade = r.querySelector('.gpa-grade').value;
+                const hours = parseFloat(r.querySelector('.gpa-hours').value) || 0;
+                const pts = GRADE_POINTS[grade] !== undefined ? GRADE_POINTS[grade] : 0;
+
+                totalPoints += pts * hours;
+                totalHours += hours;
+            });
+
+            const gpa = totalHours > 0 ? (totalPoints / totalHours).toFixed(2) : "0.00";
+            document.getElementById('gpaResultVal').textContent = gpa;
+
+            let standing = "في انتظار الإدخال";
+            let color = "var(--text-secondary)";
+
+            const numGpa = parseFloat(gpa);
+            if (numGpa >= 3.5) { standing = "ممتاز مرتفع (مرشح لمرتبة الشرف 🏆)"; color = "#34d399"; }
+            else if (numGpa >= 3.0) { standing = "جيد جداً (أداء متميز ✨)"; color = "#38bdf8"; }
+            else if (numGpa >= 2.5) { standing = "جيد مرتفع"; color = "#a5b4fc"; }
+            else if (numGpa >= 2.0) { standing = "مقبول (وضع أكاديمي سليم)"; color = "#fbbf24"; }
+            else if (totalHours > 0) { standing = "إنذار أكاديمي (تحت الملاحظة ⚠️)"; color = "#f87171"; }
+
+            const standingElem = document.getElementById('gpaStandingText');
+            standingElem.textContent = `الحالة: ${standing}`;
+            standingElem.style.color = color;
+
+            document.getElementById('gpaDetailsText').textContent = 
+                `إجمالي الساعات: ${totalHours} ساعة | مجموع النقاط: ${totalPoints.toFixed(2)}`;
+        }
+
+        function resetGpa() {
+            document.getElementById('gpaRowsContainer').innerHTML = '';
+            addGpaRow("مقدمة في البرمجة", "A+", 3);
+            addGpaRow("تفاضل وتكامل", "A", 3);
+            addGpaRow("هياكل البيانات", "B+", 3);
+            calculateGPA();
+        }
+
+        // ==========================================
+        // 8. Admin Panel
+        // ==========================================
+        function adminLogin() {
+            const pwd = document.getElementById('adminPwdInput').value;
+            const validPwd = localStorage.getItem('smart_admin_custom_pwd') || "admin123";
+            if (pwd === validPwd) {
+                document.getElementById('adminLoginSection').style.display = 'none';
+                document.getElementById('adminDashboardSection').style.display = 'block';
+            } else {
+                alert("كلمة المرور غير صحيحة! يرجى التأكد من كلمة المرور وإعادة المحاولة.");
+            }
+        }
+
+        function adminLogout() {
+            document.getElementById('adminLoginSection').style.display = 'block';
+            document.getElementById('adminDashboardSection').style.display = 'none';
+            document.getElementById('adminPwdInput').value = '';
+        }
+
+        function adminAddCourse() {
+            const cid = document.getElementById('newCid').value.trim().toUpperCase();
+            const name = document.getElementById('newName').value.trim();
+            const inst = document.getElementById('newInst').value.trim();
+            const room = document.getElementById('newRoom').value.trim();
+            const hours = parseInt(document.getElementById('newHours').value.trim() || 3);
+            const prereqs = document.getElementById('newPrereqs').value.split(',').map(p => p.trim().toUpperCase()).filter(p => p);
+
+            if (!cid || !name) {
+                alert("يرجى إدخال رمز المادة واسمها على الأقل!");
+                return;
+            }
+
+            COURSES.push({
+                course_id: cid,
+                course_name: name,
+                instructor: inst || "د. المحاضر",
+                room: room || "قاعة عامة",
+                credit_hours: hours
+            });
+
+            PREREQS[cid] = prereqs;
+
+            renderCourses(COURSES);
+            initAdvisor();
+            alert(`تمت إضافة المقرر ${cid} بنجاح إلى قاعدة البيانات المحلية!`);
+
+            // Clear inputs
+            document.getElementById('newCid').value = '';
+            document.getElementById('newName').value = '';
+            document.getElementById('newInst').value = '';
+            document.getElementById('newRoom').value = '';
+            document.getElementById('newPrereqs').value = '';
+        }
+
+        function exportData(type) {
+            let dataStr = "";
+            let filename = "";
+
+            if (type === 'csv') {
+                let csv = "course_id,course_name,instructor,room,credit_hours\n";
+                COURSES.forEach(c => {
+                    csv += `"${c.course_id}","${c.course_name}","${c.instructor}","${c.room}",${c.credit_hours}\n`;
+                });
+                dataStr = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+                filename = "courses.csv";
+            } else if (type === 'json') {
+                dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(PREREQS, null, 4));
+                filename = "prerequisites.json";
+            }
+
+            const dlAnchor = document.createElement('a');
+            dlAnchor.setAttribute("href", dataStr);
+            dlAnchor.setAttribute("download", filename);
+            document.body.appendChild(dlAnchor);
+            dlAnchor.click();
+            dlAnchor.remove();
+        }
+
+        // ==========================================
+        // 9. App Initialization
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCourses(COURSES);
+            initAdvisor();
+            loadDoc('attendance');
+            resetGpa();
+            executeIRSearch();
+
+            // Set current URL dynamically for GitHub banner
+            const curUrl = window.location.href;
+            if (curUrl.includes('github.io')) {
+                document.getElementById('liveUrlText').innerHTML = `<i class="fa-solid fa-globe"></i> الرابط الحالي: ${window.location.hostname}`;
+            }
+        });
+
+        // =============================================================================
+        //  Career-Path Orchestrator & Defense Agent JavaScript Implementation
+        // =============================================================================
+        let selectedTrackId = "ai_ml";
+
+        function initCareerEngine() {
+            renderTrackButtons();
+            updateCareerAnalysis();
+            calculateRetakeROI();
+            updatePetitionPreview();
+        }
+
+        function renderTrackButtons() {
+            const container = document.getElementById('trackButtonsContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            CAREER_TRACKS.tracks.forEach(t => {
+                const btn = document.createElement('button');
+                btn.className = `btn ${t.id === selectedTrackId ? 'btn-primary' : 'btn-outline'}`;
+                btn.style.textAlign = 'right';
+                btn.style.padding = '10px 14px';
+                btn.style.display = 'flex';
+                btn.style.flexDirection = 'column';
+                btn.style.gap = '4px';
+                btn.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <span style="font-size: 1.1rem;">${t.icon}</span>
+                        <span class="badge" style="background: ${t.badge_color}33; color: ${t.badge_color}; border: 1px solid ${t.badge_color}55; font-size: 0.72rem;">${t.required_skills.length} مهارات</span>
+                    </div>
+                    <b style="font-size: 0.92rem; color: #fff;">${t.name_ar}</b>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-latin);">${t.name}</span>
+                `;
+                btn.onclick = () => {
+                    selectedTrackId = t.id;
+                    document.getElementById('activeTrackBadge').textContent = t.name_ar;
+                    renderTrackButtons();
+                    updateCareerAnalysis();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function getPassedCourseCodes() {
+            const checkedBoxes = Array.from(document.querySelectorAll('#advisorChecklist input[type="checkbox"]:checked'));
+            return new Set(checkedBoxes.map(b => b.value.toUpperCase()));
+        }
+
+        function syncAdvisorToCareer() {
+            updateCareerAnalysis();
+            alert("تمت مزامنة المواد المجتازة من محرك الاستنتاج بنجاح!");
+        }
+
+        function updateCareerAnalysis() {
+            const track = CAREER_TRACKS.tracks.find(t => t.id === selectedTrackId);
+            if (!track) return;
+
+            const passedCodes = getPassedCourseCodes();
+
+            // Collect acquired skills
+            const acquiredSkills = new Set();
+            passedCodes.forEach(code => {
+                if (COURSE_SKILLS[code] && COURSE_SKILLS[code].skills) {
+                    COURSE_SKILLS[code].skills.forEach(s => acquiredSkills.add(s));
+                }
+            });
+
+            const reqSkills = track.required_skills;
+            const covered = reqSkills.filter(s => acquiredSkills.has(s));
+            const missing = reqSkills.filter(s => !acquiredSkills.has(s));
+
+            const score = reqSkills.length > 0 ? Math.round((covered.length / reqSkills.length) * 100) : 0;
+
+            // Update UI Score
+            const scoreVal = document.getElementById('readinessScoreVal');
+            if (scoreVal) {
+                scoreVal.textContent = `${score}%`;
+                scoreVal.style.color = score >= 75 ? '#34d399' : (score >= 40 ? '#38bdf8' : '#c084fc');
+            }
+            const progBar = document.getElementById('readinessProgressBar');
+            if (progBar) progBar.style.width = `${score}%`;
+
+            const insight = document.getElementById('readinessInsightText');
+            if (insight) {
+                insight.innerHTML = `أنت تغطي حالياً <b>${covered.length}</b> من أصل <b>${reqSkills.length}</b> مهارات أساسية مطلوبة في وظائف <b>${track.name_ar}</b>.`;
+            }
+
+            // Render Covered Skills
+            const covCount = document.getElementById('coveredSkillsCount');
+            if (covCount) covCount.textContent = covered.length;
+            const covList = document.getElementById('coveredSkillsList');
+            if (covList) {
+                covList.innerHTML = covered.length ? covered.map(s => `<span class="badge badge-success"><i class="fa-solid fa-check"></i> ${s}</span>`).join('') : '<span style="color: var(--text-muted); font-size: 0.85rem;">لم تُغطَ أي مهارة بعد.</span>';
+            }
+
+            // Render Missing Skills
+            const misCount = document.getElementById('missingSkillsCount');
+            if (misCount) misCount.textContent = missing.length;
+            const misList = document.getElementById('missingSkillsList');
+            if (misList) {
+                misList.innerHTML = missing.length ? missing.map(s => `<span class="badge badge-danger"><i class="fa-solid fa-xmark"></i> ${s}</span>`).join('') : '<span class="badge badge-success">تهانينا! غطيت كافة مهارات التراك الأكاديمية.</span>';
+            }
+
+            // Render Track Meta
+            const metaDiv = document.getElementById('trackMarketMeta');
+            if (metaDiv) {
+                metaDiv.innerHTML = `
+                    <div><i class="fa-solid fa-briefcase" style="color: var(--accent-secondary);"></i> <b>المسميات الوظيفية:</b> ${track.target_roles_ar}</div>
+                    <div><i class="fa-solid fa-coins" style="color: #fbbf24;"></i> <b>متوسط الرواتب بالسوق المصري:</b> ${track.average_salary_egy}</div>
+                `;
+            }
+
+            // Render Strategic Electives
+            renderElectivesRecommendations(missing, passedCodes);
+
+            // Render Bridge Roadmaps
+            renderBridgeRoadmap(missing, track);
+
+            // Render CV Preview
+            renderCourseworkCV();
+        }
+
+        function renderElectivesRecommendations(missingSkills, passedCodes) {
+            const container = document.getElementById('electivesRecommendationList');
+            const countBadge = document.getElementById('electivesCountBadge');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const missingSet = new Set(missingSkills);
+            const recommendations = [];
+
+            COURSES.forEach(course => {
+                const cid = course.course_id;
+                if (passedCodes.has(cid)) return;
+
+                const meta = COURSE_SKILLS[cid];
+                if (!meta || !meta.is_elective) return;
+
+                // Check prerequisites
+                const reqs = PREREQS[cid] || [];
+                const prereqsMet = reqs.every(r => passedCodes.has(r));
+                if (!prereqsMet) return;
+
+                // Match skills
+                const courseSkills = meta.skills || [];
+                const matches = courseSkills.filter(s => missingSet.has(s));
+
+                if (matches.length > 0) {
+                    recommendations.push({
+                        course: course,
+                        meta: meta,
+                        matches: matches,
+                        ratio: Math.round((matches.length / (missingSkills.length || 1)) * 100)
+                    });
+                }
+            });
+
+            if (countBadge) countBadge.textContent = `${recommendations.length} مواد مقترحة تخدم تراكك`;
+
+            if (recommendations.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 25px; color: var(--text-muted); background: rgba(15,23,42,0.4); border-radius: var(--radius-md);">
+                        <i class="fa-solid fa-circle-check" style="color: #34d399; font-size: 1.8rem; margin-bottom: 8px;"></i>
+                        <p>لا توجد مواد اختيارية مفتوحة تقفل مهارات إضافية حالياً، أو أنك قد سجلت كافة المقررات المرتبطة بهذا التراك.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            recommendations.sort((a, b) => b.matches.length - a.matches.length);
+
+            recommendations.forEach(rec => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.border = '1.5px solid rgba(245, 158, 11, 0.4)';
+                card.style.padding = '16px';
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="badge badge-code">${rec.course.course_id}</span>
+                        <span class="badge badge-warning"><i class="fa-solid fa-star"></i> مادة اختيارية موصى بها</span>
+                    </div>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 6px; color: #fff;">${rec.course.course_name}</h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px;">${rec.meta.practical_project}</p>
+                    <div style="background: rgba(245, 158, 11, 0.1); border-radius: 8px; padding: 8px; margin-bottom: 10px;">
+                        <span style="font-size: 0.82rem; color: #fbbf24; font-weight: 700;">تقفل لك ${rec.matches.length} مهارات حيوية ناقصة:</span>
+                        <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+                            ${rec.matches.map(m => `<span class="badge badge-success" style="font-size: 0.75rem;">${m}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                        <span><i class="fa-solid fa-user-tie"></i> ${rec.course.instructor}</span>
+                        <span><i class="fa-solid fa-clock"></i> ${rec.course.credit_hours} ساعات</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function renderBridgeRoadmap(missingSkills, track) {
+            const container = document.getElementById('bridgeRoadmapContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            let matchedAny = false;
+
+            missingSkills.forEach(skill => {
+                const courses = BRIDGE_ROADMAPS[skill];
+                if (courses && courses.length > 0) {
+                    matchedAny = true;
+                    const block = document.createElement('div');
+                    block.style.background = 'rgba(15, 23, 42, 0.6)';
+                    block.style.border = '1px solid rgba(56, 189, 248, 0.25)';
+                    block.style.borderRadius = 'var(--radius-md)';
+                    block.style.padding = '14px 18px';
+                    block.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                            <b style="color: #38bdf8; font-size: 1rem;"><i class="fa-solid fa-toolbox"></i> أداة / مهارة عملية: ${skill}</b>
+                            <span class="badge badge-info"><i class="fa-solid fa-bolt"></i> خطة سريعة أثناء دراسة المنهج</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 8px;">
+                            ${courses.map(c => `
+                                <div style="background: rgba(30, 41, 59, 0.6); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+                                    <div>
+                                        <b style="color: #fff; font-size: 0.88rem;">${c.title}</b>
+                                        <div style="font-size: 0.78rem; color: #94a3b8; margin: 4px 0;">
+                                            <span><i class="fa-solid fa-tv"></i> ${c.platform}</span> • 
+                                            <span><i class="fa-solid fa-hourglass-half"></i> ${c.duration}</span> • 
+                                            <span style="color: #34d399;">${c.cost}</span>
+                                        </div>
+                                    </div>
+                                    <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem; text-align: center; text-decoration: none; margin-top: 6px;">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> بدء الكورس العملي
+                                    </a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.appendChild(block);
+                }
+            });
+
+            if (!matchedAny) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 25px; color: var(--text-muted); background: rgba(15,23,42,0.4); border-radius: var(--radius-md);">
+                        <i class="fa-solid fa-circle-check" style="color: #34d399; font-size: 1.8rem; margin-bottom: 8px;"></i>
+                        <p>لا توجد فجوات أدوات رئيسية حالياً أو أنك قد استوفيت متطلبات التراك بنجاح!</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderCourseworkCV() {
+            const name = document.getElementById('cvStudentName') ? document.getElementById('cvStudentName').value.trim() || 'اسم الطالب الثلاثي' : 'اسم الطالب';
+            const email = document.getElementById('cvStudentEmail') ? document.getElementById('cvStudentEmail').value.trim() || 'student@fcis.edu.eg' : 'student@fcis.edu.eg';
+            const passedCodes = getPassedCourseCodes();
+
+            const track = CAREER_TRACKS.tracks.find(t => t.id === selectedTrackId) || CAREER_TRACKS.tracks[0];
+
+            const cvCourses = [];
+            const allAcquiredSkills = new Set();
+
+            passedCodes.forEach(code => {
+                const meta = COURSE_SKILLS[code];
+                if (meta) {
+                    cvCourses.push({ code, meta });
+                    meta.skills.forEach(s => allAcquiredSkills.add(s));
+                }
+            });
+
+            const preview = document.getElementById('cvPreviewBox');
+            if (!preview) return;
+
+            preview.innerHTML = `
+                <div style="border-bottom: 2px solid #0f172a; padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <h2 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0;">${name}</h2>
+                        <div style="font-size: 0.95rem; color: #475569; font-weight: 600; margin-top: 2px;">
+                            Aspiring ${track.job_titles[0]} | Computer Science & AI Undergrad
+                        </div>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #64748b; text-align: left;" dir="ltr">
+                        <div>📧 ${email}</div>
+                        <div>🎓 Faculty of Computers & Artificial Intelligence</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: #1e293b; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 8px;">
+                        Technical Core Competencies
+                    </h3>
+                    <div style="font-size: 0.88rem; color: #334155; line-height: 1.6;">
+                        ${Array.from(allAcquiredSkills).map(s => `<span style="background: #f1f5f9; color: #0f172a; padding: 2px 8px; border-radius: 4px; font-weight: 600; margin-left: 4px; display: inline-block; margin-bottom: 4px;">${s}</span>`).join('') || 'No coursework recorded yet.'}
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: #1e293b; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 10px;">
+                        Academic Coursework & Production-Grade Projects (${cvCourses.length} Completed)
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        ${cvCourses.map(c => `
+                            <div style="border-left: 3px solid #6366f1; padding-left: 12px;">
+                                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.92rem; color: #0f172a;">
+                                    <span>${c.code}: ${c.meta.course_name}</span>
+                                    <span style="color: #64748b; font-size: 0.8rem; font-family: Outfit;">Academic Term</span>
+                                </div>
+                                <div style="font-size: 0.85rem; color: #334155; margin-top: 3px;">
+                                    • <b>Technical Project:</b> ${c.meta.practical_project}
+                                </div>
+                                <div style="font-size: 0.83rem; color: #475569; font-style: italic; margin-top: 2px;" dir="ltr">
+                                    • ${c.meta.cv_bullet}
+                                </div>
+                            </div>
+                        `).join('') || '<div style="color: #94a3b8; font-size: 0.9rem;">Please select passed courses in the Advisor tab to generate your CV bullets.</div>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        function printCourseworkCV() {
+            const printContent = document.getElementById('cvPreviewBox').innerHTML;
+            const printWin = window.open('', '', 'width=900,height=700');
+            printWin.document.write(`
+                <html lang="ar" dir="rtl">
+                <head>
+                    <title>Academic Coursework CV</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Cairo', 'Outfit', sans-serif; padding: 30px; color: #0f172a; }
+                        @media print { body { padding: 0; } }
+                    </style>
+                </head>
+                <body>
+                    ${printContent}
+                </body>
+                </html>
+            `);
+            printWin.document.close();
+            printWin.focus();
+            setTimeout(() => { printWin.print(); }, 400);
+        }
+
+        // =============================================================================
+        //  Academic Defense & Petition Agent Implementation
+        // =============================================================================
+        let currentDefenseRule = null;
+
+        function analyzeDefenseProblem() {
+            const query = document.getElementById('defenseProblemInput').value.trim().toLowerCase();
+            if (!query) {
+                alert("يرجى كتابة وصف المشكلة الأكاديمية أولاً!");
+                return;
+            }
+
+            let bestMatch = null;
+            let maxHits = 0;
+
+            BYLAW_RULES.rules.forEach(rule => {
+                let hits = 0;
+                rule.keywords.forEach(kw => {
+                    if (query.includes(kw.toLowerCase())) hits++;
+                });
+                if (hits > maxHits) {
+                    maxHits = hits;
+                    bestMatch = rule;
+                }
+            });
+
+            if (!bestMatch) {
+                bestMatch = BYLAW_RULES.rules[0];
+            }
+
+            currentDefenseRule = bestMatch;
+
+            const resDiv = document.getElementById('defenseAnalysisResult');
+            resDiv.style.display = 'block';
+            resDiv.innerHTML = `
+                <div style="background: rgba(15, 23, 42, 0.85); border: 1.5px solid rgba(239, 68, 68, 0.5); border-radius: var(--radius-md); padding: 18px; margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                        <span class="badge badge-danger" style="font-size: 0.9rem; padding: 6px 12px;">
+                            <i class="fa-solid fa-gavel"></i> السند القانوني المطابق: ${bestMatch.article_number}
+                        </span>
+                        <span class="badge badge-success" style="font-size: 0.85rem; padding: 6px 12px;">
+                            <i class="fa-solid fa-chart-line"></i> ${bestMatch.success_label}
+                        </span>
+                    </div>
+
+                    <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 8px;">
+                        <i class="fa-solid fa-shield-halved" style="color: #f87171;"></i> ${bestMatch.category}
+                    </h3>
+                    
+                    <div style="background: rgba(0, 0, 0, 0.35); border-right: 4px solid #f87171; padding: 12px 16px; border-radius: 4px; font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 14px;">
+                        <b>نص اللائحة التنفيذية:</b> "${bestMatch.legal_text}"
+                    </div>
+
+                    <div style="margin-bottom: 14px;">
+                        <b style="color: #fbbf24; font-size: 0.9rem;"><i class="fa-solid fa-list-check"></i> شروط استيفاء الحق القانوني:</b>
+                        <ul style="padding-right: 20px; font-size: 0.88rem; color: #e2e8f0; margin-top: 6px;">
+                            ${bestMatch.requirements.map(r => `<li style="margin-bottom: 4px;">${r}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button class="btn btn-danger" onclick="populatePetitionFromRule()">
+                            <i class="fa-solid fa-pen-fancy"></i> صياغة خطاب الالتماس الرسمي بناءً على هذا البند
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function quickDefense(text) {
+            document.getElementById('defenseProblemInput').value = text;
+            analyzeDefenseProblem();
+        }
+
+        function populatePetitionFromRule() {
+            if (!currentDefenseRule) return;
+            const container = document.getElementById('petitionGeneratorCard');
+            if (container) {
+                container.scrollIntoView({ behavior: 'smooth' });
+                updatePetitionPreview();
+            }
+        }
+
+        function updatePetitionPreview() {
+            const rule = currentDefenseRule || BYLAW_RULES.rules[0];
+            const name = document.getElementById('petStudentName') ? document.getElementById('petStudentName').value.trim() : "الطالب";
+            const id = document.getElementById('petStudentId') ? document.getElementById('petStudentId').value.trim() : "20230000";
+            const level = document.getElementById('petStudentLevel') ? document.getElementById('petStudentLevel').value.trim() : "المستوى الثاني";
+            const course = document.getElementById('petCourseName') ? document.getElementById('petCourseName').value.trim() : "المقرر الدراسي";
+            const today = new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            let tmpl = rule.petition_template;
+            tmpl = tmpl.replace(/{student_name}/g, name)
+                       .replace(/{student_id}/g, id)
+                       .replace(/{student_level}/g, level)
+                       .replace(/{student_major}/g, "علوم الحاسب والذكاء الاصطناعي")
+                       .replace(/{course_name}/g, course)
+                       .replace(/{course_id}/g, "")
+                       .replace(/{date_start}/g, "الأسبوع الماضي")
+                       .replace(/{date_end}/g, "تاريخ زوال العذر")
+                       .replace(/{exam_date}/g, "تاريخ الاختبار")
+                       .replace(/{advisor_name}/g, "المرشد الأكاديمي المعتمد")
+                       .replace(/{remaining_hours}/g, "22")
+                       .replace(/{extra_hours}/g, "4")
+                       .replace(/{old_grade}/g, "D")
+                       .replace(/{current_date}/g, today);
+
+            const out = document.getElementById('petitionOutputContainer');
+            if (out) out.textContent = tmpl;
+        }
+
+        function copyPetitionText() {
+            const text = document.getElementById('petitionOutputContainer').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("تم نسخ صيغة الالتماس القانونية بنجاح إلى الحافظة!");
+            });
+        }
+
+        function printPetition() {
+            const text = document.getElementById('petitionOutputContainer').textContent;
+            const printWin = window.open('', '', 'width=800,height=700');
+            printWin.document.write(`
+                <html lang="ar" dir="rtl">
+                <head>
+                    <title>خطاب التماس واستثناء رسمي</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Cairo', sans-serif; padding: 40px; color: #000; line-height: 1.8; white-space: pre-wrap; font-size: 14pt; }
+                        @media print { body { padding: 0; } }
+                    </style>
+                </head>
+                <body>${text}</body>
+                </html>
+            `);
+            printWin.document.close();
+            printWin.focus();
+            setTimeout(() => { printWin.print(); }, 400);
+        }
+
+        function calculateRetakeROI() {
+            const curGpa = parseFloat(document.getElementById('roiCurrentGpa').value) || 2.0;
+            const totalHours = parseFloat(document.getElementById('roiTotalHours').value) || 30;
+            const oldGrade = document.getElementById('roiOldGrade').value;
+            const courseHours = parseFloat(document.getElementById('roiCourseHours').value) || 3;
+
+            const oldPointsMap = { "F": 0.0, "D": 1.7, "D+": 2.0, "C": 2.3, "C+": 2.7 };
+            const oldPts = oldPointsMap[oldGrade] !== undefined ? oldPointsMap[oldGrade] : 1.7;
+
+            const newPts = oldGrade === 'F' ? 3.7 : 3.0;
+            const pointGainPerCredit = newPts - oldPts;
+            const totalPointDelta = pointGainPerCredit * courseHours;
+
+            const oldQualityPoints = curGpa * totalHours;
+            const newQualityPoints = oldQualityPoints + totalPointDelta;
+            const newGpa = (newQualityPoints / totalHours).toFixed(3);
+            const deltaGpa = (newGpa - curGpa).toFixed(3);
+            const roiPerEffort = ((deltaGpa / courseHours) * 100).toFixed(1);
+
+            const card = document.getElementById('roiResultCard');
+            if (!card) return;
+
+            card.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: center;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: #6ee7b7; font-weight: 700;">المعدل المتوقع بعد إعادة المادة:</span>
+                        <div style="font-size: 2.3rem; font-weight: 800; color: #fff; font-family: Outfit;">
+                            ${newGpa} <span style="font-size: 1rem; color: #34d399;">(+${deltaGpa})</span>
+                        </div>
+                    </div>
+                    <div style="border-right: 1px solid rgba(255,255,255,0.1); padding-right: 15px;">
+                        <span style="font-size: 0.85rem; color: #94a3b8;">مؤشر كفاءة المجهود (ROI per Credit Hour):</span>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: #fbbf24;">
+                            ${roiPerEffort}% <span style="font-size: 0.8rem; color: var(--text-muted);">عائد تراكمي/ساعة</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="badge ${deltaGpa >= 0.1 ? 'badge-success' : 'badge-warning'}">
+                            ${deltaGpa >= 0.1 ? '💡 استثمار ممتاز يرفع معدلك بقوة' : '⚠️ استثمار متوسط الأثر — اختر مادة بساعات أكبر أو تقدير F'}
+                        </span>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+                            ${oldGrade === 'F' ? 'المقرر رسبت فيه: اللائحة تحتسب لك التقدير كاملاً دون سقف!' : 'المقرر نجحت فيه: اللائحة تضع سقفاً أقصى B (3.0 نقاط).'}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Add Career Engine init to DOMContentLoaded
+        window.addEventListener('DOMContentLoaded', () => {
+            initCareerEngine();
+        });
+
+    </script>
+</body>
+</html>
